@@ -512,7 +512,7 @@ const HomeIntro = () => (
           </h2>
           <div className="space-y-8 md:space-y-10">
             <div className="flex gap-4 md:gap-6 group">
-              <div className="w-12 h-12 md:w-16 md:h-16 rounded-xl md:rounded-2xl bg-bg-soft flex items-center justify-center shrink-0 group-hover:bg-indigo-50 transition-all">
+              <div className="w-12 h-12 md:w-16 md:h-16 rounded-xl md:rounded-2xl bg-bg-soft flex items-center justify-center shrink-0 group-hover:bg-emerald-50 transition-all">
                 <Zap className="w-6 h-6 md:w-8 md:h-8 text-primary-deep" />
               </div>
               <div>
@@ -523,7 +523,7 @@ const HomeIntro = () => (
               </div>
             </div>
             <div className="flex gap-4 md:gap-6 group">
-              <div className="w-12 h-12 md:w-16 md:h-16 rounded-xl md:rounded-2xl bg-bg-soft flex items-center justify-center shrink-0 group-hover:bg-indigo-50 transition-all">
+              <div className="w-12 h-12 md:w-16 md:h-16 rounded-xl md:rounded-2xl bg-bg-soft flex items-center justify-center shrink-0 group-hover:bg-emerald-50 transition-all">
                 <Users className="w-6 h-6 md:w-8 md:h-8 text-primary-deep" />
               </div>
               <div>
@@ -534,7 +534,7 @@ const HomeIntro = () => (
               </div>
             </div>
             <div className="flex gap-4 md:gap-6 group">
-              <div className="w-12 h-12 md:w-16 md:h-16 rounded-xl md:rounded-2xl bg-bg-soft flex items-center justify-center shrink-0 group-hover:bg-indigo-50 transition-all">
+              <div className="w-12 h-12 md:w-16 md:h-16 rounded-xl md:rounded-2xl bg-bg-soft flex items-center justify-center shrink-0 group-hover:bg-emerald-50 transition-all">
                 <ShieldCheck className="w-6 h-6 md:w-8 md:h-8 text-primary-deep" />
               </div>
               <div>
@@ -556,7 +556,7 @@ const HomeIntro = () => (
                   <img src={`https://i.pravatar.cc/100?img=${i + 10}`} alt="Expert" className="w-full h-full object-cover" />
                 </div>
               ))}
-              <div className="w-10 h-10 rounded-full border-2 border-white bg-indigo-50 flex items-center justify-center text-[10px] font-black text-primary-deep font-display">
+              <div className="w-10 h-10 rounded-full border-2 border-white bg-emerald-50 flex items-center justify-center text-[10px] font-black text-primary-deep font-display">
                 +10
               </div>
             </div>
@@ -634,7 +634,7 @@ const HomeExperts = () => (
             role: "부원장 / 기능의학·최면 전문가", 
             tags: ["기능의학", "최면전문가", "성상담 전문가"],
             desc: "원광대 의대 출신의 기능의학 전문가이자 최면 치료 전문가입니다. 몸과 마음의 통합적 치유를 위해 기능의학, 명상, 심신정화 식이요법을 결합한 독창적인 MHS 프로그램을 운영합니다.",
-            image: "https://mhsjoy.mycafe24.com/wp-content/uploads/2024/05/KakaoTalk_20240521_123825759.jpg" 
+            image: "https://res.cloudinary.com/dxjz9ksjg/image/upload/v1774347139/KakaoTalk_20240521_123825759_gslvpg.jpg" 
           },
           { 
             name: "허선무 변호사", 
@@ -3106,18 +3106,18 @@ const TreatmentPage = ({ title, slug }: { title: string; slug: string }) => (
                   { title: "건강한 성적 에너지 재설계", icon: Zap },
                   { title: "재발 방지 계획 수립", icon: ClipboardCheck }
                 ].map((item, i) => (
-                  <div key={i} className="p-6 bg-slate-50 rounded-3xl text-center hover:bg-indigo-50 transition-colors group">
-                    <item.icon className="w-8 h-8 mx-auto mb-4 text-indigo-600 group-hover:scale-110 transition-transform" />
+                  <div key={i} className="p-6 bg-slate-50 rounded-3xl text-center hover:bg-emerald-50 transition-colors group">
+                    <item.icon className="w-8 h-8 mx-auto mb-4 text-emerald-600 group-hover:scale-110 transition-transform" />
                     <p className="font-bold text-slate-900 text-sm leading-tight">{item.title}</p>
                   </div>
                 ))}
               </div>
-              <p className="mt-12 text-center text-lg text-slate-600">이는 단순한 상담이 아니라 <span className="text-indigo-600 font-bold">행동 시스템을 다시 설계하는 과정</span>입니다.</p>
+              <p className="mt-12 text-center text-lg text-slate-600">이는 단순한 상담이 아니라 <span className="text-emerald-600 font-bold">행동 시스템을 다시 설계하는 과정</span>입니다.</p>
             </div>
 
             <div className="bg-primary-deep text-white p-12 rounded-[40px] text-center space-y-6">
               <h3 className="text-3xl font-bold">지금 멈추는 선택이 가장 안전합니다</h3>
-              <p className="text-xl text-blue-100">많은 문제는 “더 심각해진 뒤”에 상담실을 찾습니다.</p>
+              <p className="text-xl text-emerald-100">많은 문제는 “더 심각해진 뒤”에 상담실을 찾습니다.</p>
               <div className="max-w-3xl mx-auto space-y-6 text-lg">
                 <p>그러나 진짜 변화는 아직 통제 가능할 때 시작하는 것이 가장 효과적입니다.</p>
                 <p className="bg-white/10 p-8 rounded-3xl backdrop-blur-sm">
@@ -3140,14 +3140,14 @@ const TreatmentPage = ({ title, slug }: { title: string; slug: string }) => (
                     <p className="text-slate-500 mb-6 italic">“많은 분들이 처음에는 이렇게 말합니다.”</p>
                     <div className="space-y-4">
                       {["“직접적인 접촉은 없었습니다.”", "“순간적인 호기심이었습니다.”", "“온라인에서 일어난 일이었습니다.”"].map((quote, i) => (
-                        <p key={i} className="text-lg font-medium text-slate-800 pl-4 border-l-4 border-indigo-200">{quote}</p>
+                        <p key={i} className="text-lg font-medium text-slate-800 pl-4 border-l-4 border-emerald-200">{quote}</p>
                       ))}
                     </div>
                   </div>
                   <p className="text-slate-600 leading-relaxed">처음에는 사건을 그렇게 이해하려 합니다. 하지만 시간이 지나면 대부분 같은 질문에 다시 마주하게 됩니다.</p>
                   
                   <div className="bg-primary-deep text-white p-10 rounded-[40px] shadow-xl">
-                    <h3 className="text-xl font-bold mb-8 text-blue-100">우리가 마주해야 할 질문들</h3>
+                    <h3 className="text-xl font-bold mb-8 text-emerald-100">우리가 마주해야 할 질문들</h3>
                     <ul className="space-y-6">
                       {[
                         "왜 그 순간에 멈추지 못했는가.",
@@ -3155,7 +3155,7 @@ const TreatmentPage = ({ title, slug }: { title: string; slug: string }) => (
                         "다시 같은 상황이 오면 나는 통제할 수 있는가."
                       ].map((q, i) => (
                         <li key={i} className="flex gap-4 items-start">
-                          <span className="w-6 h-6 rounded-full bg-blue-700 flex items-center justify-center shrink-0 text-xs">{i+1}</span>
+                          <span className="w-6 h-6 rounded-full bg-emerald-700/50 border border-emerald-400/50 flex items-center justify-center shrink-0 text-xs">{i+1}</span>
                           <p className="text-lg leading-tight">{q}</p>
                         </li>
                       ))}
@@ -3195,7 +3195,7 @@ const TreatmentPage = ({ title, slug }: { title: string; slug: string }) => (
                     "딥페이크 및 합성물 관련 문제"
                   ].map((item, i) => (
                     <div key={i} className="bg-white p-5 rounded-2xl shadow-sm border border-slate-200 flex items-center gap-3">
-                      <div className="w-2 h-2 rounded-full bg-indigo-500" />
+                      <div className="w-2 h-2 rounded-full bg-emerald-500" />
                       <span className="text-slate-700 font-medium">{item}</span>
                     </div>
                   ))}
@@ -3208,7 +3208,7 @@ const TreatmentPage = ({ title, slug }: { title: string; slug: string }) => (
                       { title: "자극", color: "bg-rose-50 text-rose-600" },
                       { title: "충동적인 행동", color: "bg-orange-50 text-orange-600" },
                       { title: "불안과 후회", color: "bg-slate-50 text-slate-600" },
-                      { title: "자기 합리화", color: "bg-indigo-50 text-indigo-600" },
+                      { title: "자기 합리화", color: "bg-emerald-50 text-emerald-600" },
                       { title: "다시 반복", color: "bg-rose-600 text-white" }
                     ].map((step, i, arr) => (
                       <React.Fragment key={i}>
@@ -3238,9 +3238,9 @@ const TreatmentPage = ({ title, slug }: { title: string; slug: string }) => (
                     { title: "거리감", icon: MapPin },
                     { title: "즉각적 자극", icon: Zap }
                   ].map((item, i) => (
-                    <div key={i} className="text-center p-4 bg-slate-50 rounded-2xl">
-                      <item.icon className="w-6 h-6 mx-auto mb-2 text-indigo-600" />
-                      <p className="text-xs font-bold text-slate-900">{item.title}</p>
+                    <div key={i} className="text-center p-4 bg-emerald-50/50 border border-emerald-100/50 rounded-2xl">
+                      <item.icon className="w-6 h-6 mx-auto mb-2 text-emerald-600" />
+                      <p className="text-xs font-bold text-emerald-900">{item.title}</p>
                     </div>
                   ))}
                 </div>
@@ -3282,8 +3282,8 @@ const TreatmentPage = ({ title, slug }: { title: string; slug: string }) => (
                   "어떤 상황에서 통제가 무너졌는가",
                   "비슷한 상황이 다시 오면 어떻게 다르게 대응할 것인가"
                 ].map((q, i) => (
-                  <div key={i} className="p-6 bg-white rounded-2xl border border-slate-100 flex gap-4">
-                    <HelpCircle className="w-6 h-6 text-[#1565C0] shrink-0" />
+                  <div key={i} className="p-6 bg-white rounded-2xl border border-emerald-50 flex gap-4">
+                    <HelpCircle className="w-6 h-6 text-emerald-600 shrink-0" />
                     <p className="font-medium">{q}</p>
                   </div>
                 ))}
@@ -3301,13 +3301,13 @@ const TreatmentPage = ({ title, slug }: { title: string; slug: string }) => (
                   { title: "공감 능력 회복", icon: Users },
                   { title: "재발 방지 계획 수립", icon: ClipboardCheck }
                 ].map((item, i) => (
-                  <div key={i} className="p-6 bg-slate-50 rounded-3xl text-center hover:bg-indigo-50 transition-colors group">
-                    <item.icon className="w-8 h-8 mx-auto mb-4 text-indigo-600 group-hover:scale-110 transition-transform" />
+                  <div key={i} className="p-6 bg-slate-50 rounded-3xl text-center hover:bg-emerald-50 transition-colors group">
+                    <item.icon className="w-8 h-8 mx-auto mb-4 text-emerald-600 group-hover:scale-110 transition-transform" />
                     <p className="font-bold text-slate-900 text-sm leading-tight">{item.title}</p>
                   </div>
                 ))}
               </div>
-              <p className="mt-12 text-center text-lg text-slate-600">단순한 다짐이 아니라 <span className="text-indigo-600 font-bold">행동 시스템을 재설계하는 과정</span>입니다.</p>
+              <p className="mt-12 text-center text-lg text-slate-600">단순한 다짐이 아니라 <span className="text-emerald-600 font-bold">행동 시스템을 재설계하는 과정</span>입니다.</p>
             </div>
 
             {/* 6. 지금이 가장 중요한 시점입니다 */}
@@ -3316,7 +3316,7 @@ const TreatmentPage = ({ title, slug }: { title: string; slug: string }) => (
                 <h2 className="text-3xl font-bold text-slate-900">지금이 가장 중요한 시점입니다</h2>
                 <div className="max-w-3xl mx-auto text-lg text-slate-600 leading-relaxed space-y-4">
                   <p>스마트폰과 인터넷은 우리의 일상에서 사라지지 않습니다.</p>
-                  <p>중요한 것은 환경을 완전히 피하는 것이 아니라 <span className="font-bold text-indigo-600">그 안에서 스스로를 통제할 수 있는 힘</span>을 만드는 것입니다.</p>
+                  <p>중요한 것은 환경을 완전히 피하는 것이 아니라 <span className="font-bold text-emerald-600">그 안에서 스스로를 통제할 수 있는 힘</span>을 만드는 것입니다.</p>
                   <p>디지털 성범죄 상담은 낙인을 위한 과정이 아니라 다시는 같은 선택을 반복하지 않기 위한 준비 과정입니다.</p>
                 </div>
               </div>
@@ -4117,26 +4117,10 @@ const EducationPage = ({ title, slug }: { title: string; slug: string }) => {
             <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-16 text-center">교육 과정</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {[
-                { 
-                  title: "사건 상황 인식", 
-                  desc: "사건 당시의 상황과 판단 과정을 함께 점검합니다.",
-                  icon: Search
-                },
-                { 
-                  title: "인지 왜곡 분석", 
-                  desc: "행동에 영향을 미친 사고 패턴과 판단 구조를 분석합니다.",
-                  icon: BarChart3
-                },
-                { 
-                  title: "관계 인식 재구성", 
-                  desc: "타인의 입장과 관계 맥락을 고려하는 사고 방식을 학습합니다.",
-                  icon: RefreshCw
-                },
-                { 
-                  title: "행동 선택 훈련", 
-                  desc: "유사한 상황에서 보다 안전한 판단과 행동을 선택할 수 있도록 훈련합니다.",
-                  icon: CheckCircle2
-                }
+                { title: "사건 상황 인식", desc: "사건 당시의 상황과 판단 과정을 함께 점검합니다.", icon: Search },
+                { title: "인지 왜곡 분석", desc: "행동에 영향을 미친 사고 패턴과 판단 구조를 분석합니다.", icon: BarChart3 },
+                { title: "관계 인식 재구성", desc: "타인의 입장과 관계 맥락을 고려하는 사고 방식을 학습합니다.", icon: RefreshCw },
+                { title: "행동 선택 훈련", desc: "유사한 상황에서 보다 안전한 판단과 행동을 선택할 수 있도록 훈련합니다.", icon: CheckCircle2 }
               ].map((item, idx) => (
                 <div key={idx} className="bg-white p-10 rounded-[40px] shadow-sm border border-slate-100 hover:shadow-md transition-all group">
                   <div className="w-14 h-14 rounded-2xl bg-slate-50 text-slate-900 flex items-center justify-center mb-8 group-hover:bg-primary-deep group-hover:text-white transition-colors">
@@ -4449,7 +4433,7 @@ const EducationPage = ({ title, slug }: { title: string; slug: string }) => {
             <h2 className="text-3xl font-bold text-slate-900 mb-8">교육 프로그램 상세</h2>
             <div className="space-y-8">
               <div className="flex gap-6">
-                <div className="w-12 h-12 rounded-full bg-indigo-50 text-indigo-600 flex items-center justify-center shrink-0">
+                <div className="w-12 h-12 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0">
                   <BookOpen className="w-6 h-6" />
                 </div>
                 <div>
@@ -4457,7 +4441,7 @@ const EducationPage = ({ title, slug }: { title: string; slug: string }) => {
                   <ul className="space-y-3">
                     {content.details.map((detail, idx) => (
                       <li key={idx} className="flex items-center gap-2 text-slate-600">
-                        <div className="w-1.5 h-1.5 bg-indigo-400 rounded-full" />
+                        <div className="w-1.5 h-1.5 bg-emerald-400 rounded-full" />
                         {detail}
                       </li>
                     ))}
@@ -4512,7 +4496,7 @@ const CoachingPage = () => (
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
-          className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-indigo-50 border border-indigo-100 text-indigo-600 text-base font-bold mb-8 shadow-sm"
+          className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-emerald-50 border border-emerald-100 text-primary-deep text-base font-bold mb-8 shadow-sm"
         >
           <PenTool className="w-5 h-5" />
           진정성 있는 반성을 위한 전문 가이드
@@ -4527,7 +4511,7 @@ const CoachingPage = () => (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
       <div className="space-y-24">
         {/* 1. 반성문과 소감문에서 가장 많이 발생하는 문제 */}
-        <section className="bg-rose-50 rounded-[48px] p-12 lg:p-20 border border-rose-100">
+        <section className="bg-emerald-50 rounded-[48px] p-12 lg:p-20 border border-emerald-100">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="order-2 lg:order-1">
               <h2 className="text-3xl font-bold text-slate-900 mb-8">반성문과 소감문 작성 시 주의사항</h2>
@@ -4542,7 +4526,7 @@ const CoachingPage = () => (
                     "변명처럼 보이는 내용",
                     "반복적인 상투적 표현"
                   ].map((text, i) => (
-                    <div key={i} className="flex items-center gap-3 p-4 bg-white rounded-2xl border border-rose-200 text-rose-700 text-sm font-medium">
+                    <div key={i} className="flex items-center gap-3 p-4 bg-white rounded-2xl border border-emerald-200 text-emerald-700 text-sm font-medium">
                       <AlertTriangle className="w-5 h-5 shrink-0" />
                       {text}
                     </div>
@@ -4554,8 +4538,8 @@ const CoachingPage = () => (
                 </p>
               </div>
             </div>
-            <div className="order-1 lg:order-2 bg-white p-10 rounded-[40px] shadow-xl border border-rose-100">
-              <div className="w-16 h-16 rounded-2xl bg-rose-100 text-rose-600 flex items-center justify-center mb-8">
+            <div className="order-1 lg:order-2 bg-white p-10 rounded-[40px] shadow-xl border border-emerald-100">
+              <div className="w-16 h-16 rounded-2xl bg-emerald-100 text-emerald-600 flex items-center justify-center mb-8">
                 <PenTool className="w-8 h-8" />
               </div>
               <h3 className="text-2xl font-bold text-slate-900 mb-4">전문적인 코칭의 필요성</h3>
@@ -4579,7 +4563,7 @@ const CoachingPage = () => (
               { step: "03", title: "구조적 흐름 설계", desc: "논리적이고 설득력 있는 글의 흐름을 설계하고 표현을 다듬습니다." }
             ].map((item, idx) => (
               <div key={idx} className="p-10 rounded-[40px] bg-white border border-slate-100 shadow-sm relative overflow-hidden group">
-                <div className="text-6xl font-black text-slate-50 absolute -top-4 -right-4 group-hover:text-indigo-50 transition-colors">{item.step}</div>
+                <div className="text-6xl font-black text-slate-50 absolute -top-4 -right-4 group-hover:text-emerald-50 transition-colors">{item.step}</div>
                 <h4 className="text-xl font-bold text-slate-900 mb-4 relative z-10">{item.title}</h4>
                 <p className="text-slate-500 text-sm leading-relaxed relative z-10">{item.desc}</p>
               </div>
@@ -4740,7 +4724,7 @@ const CollaborationPage = () => (
               <p>이 과정은 단순히 상담 기록을 남기는 차원을 넘어, 사건 이후 어떤 태도와 변화가 있었는지를 보다 체계적으로 정리하는 과정이 될 수 있습니다.</p>
             </div>
             <div className="mt-12 p-8 bg-slate-50 rounded-3xl text-slate-900 border border-slate-100">
-              <p className="text-xl font-bold text-[#1565C0]">“상담 + 법적 이해 + 절차별 자료 정리”</p>
+              <p className="text-xl font-bold text-primary-deep">“상담 + 법적 이해 + 절차별 자료 정리”</p>
               <p className="text-slate-500 mt-2">본 센터가 지향하는 통합적 상담 시스템의 핵심 구조입니다.</p>
             </div>
           </div>
@@ -5869,7 +5853,7 @@ const AboutPage = ({ title, slug }: { title: string; slug: string }) => {
             <div className="lg:col-span-1 lg:sticky lg:top-32">
               <div className="rounded-3xl overflow-hidden shadow-2xl mb-8">
                 <img 
-                   src="https://mhsjoy.mycafe24.com/wp-content/uploads/2024/05/KakaoTalk_20240521_123825759.jpg" 
+                   src="https://res.cloudinary.com/dxjz9ksjg/image/upload/v1774347139/KakaoTalk_20240521_123825759_gslvpg.jpg" 
                    alt="소윤주 부원장" 
                   className="w-full aspect-square lg:aspect-[3/4] object-cover"
                   referrerPolicy="no-referrer"
@@ -5977,36 +5961,188 @@ const AboutPage = ({ title, slug }: { title: string; slug: string }) => {
             <h2 className="text-3xl font-bold text-slate-900 mb-4">성범죄 특화 전문가 그룹</h2>
             <p className="text-slate-500">단순 심리상담사가 아닌, 구조적 개입과 행동 교정의 전문가들이 함께합니다.</p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              { 
-                name: "윤영준 원장", 
-                role: "상담학 박사 / 국제 임상최면치료사", 
-                image: "https://tpqens1j9138.edge.naverncp.com/MNiExO50AC?src=https%3A%2F%2Fpage24.app%2Fapi%2Ffile%2FmodooImgPasre%3FsiteId%3Dcriminalmhs%26image_url%3Dhttps%3A%2F%2F9tsiiw6i9140.edge.naverncp.com%2Ffiles%2Fcriminalmhs%2F202507%2Ffffbec7c7fc9a06e84210f84e37366dc.jpg%26mcode%3D1112&type=m&w=1980&h=1980&ttype=png",
-                desc: "성범죄 상담 경력 10년 이상, 법원 촉탁 상담위원 역임."
-              },
-              { 
-                name: "소윤주 부원장", 
-                role: "기능의학 / 최면 / 성상담 전문가", 
-                image: "https://mhsjoy.mycafe24.com/wp-content/uploads/2024/05/KakaoTalk_20240521_123825759.jpg",
-                desc: "기능의학 기반의 심신 통합 치유 전문가."
-              },
-              { 
-                name: "허선무 변호사", 
-                role: "사법시험 54회 / 성범죄 전문 변호사", 
-                image: "https://res.cloudinary.com/dxjz9ksjg/image/upload/v1774346463/member_view23_nnxzhn.jpg",
-                desc: "대구지방법원 김천지원 조정위원 및 대구지방검찰청 김천지청 형사조정위원 역임, 성범죄 전문 법률 조력자."
-              }
-            ].map((expert, idx) => (
-              <div key={idx} className="text-center group">
-                <div className="w-48 h-48 rounded-full overflow-hidden mx-auto mb-6 shadow-xl group-hover:scale-105 transition-transform duration-500">
-                  <img src={expert.image} alt={expert.name} className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+          <div className="space-y-32">
+            {/* 1행: 원장단 (2열) */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16 max-w-4xl mx-auto">
+              {[
+                { 
+                  name: "윤영준 원장", 
+                  role: "상담학 박사 / 국제 임상최면치료사", 
+                  image: "https://tpqens1j9138.edge.naverncp.com/MNiExO50AC?src=https%3A%2F%2Fpage24.app%2Fapi%2Ffile%2FmodooImgPasre%3FsiteId%3Dcriminalmhs%26image_url%3Dhttps%3A%2F%2F9tsiiw6i9140.edge.naverncp.com%2Ffiles%2Fcriminalmhs%2F202507%2Ffffbec7c7fc9a06e84210f84e37366dc.jpg%26mcode%3D1112&type=m&w=1980&h=1980&ttype=png",
+                  desc: "성범죄 상담 경력 10년 이상, 법원 촉탁 상담위원 역임."
+                },
+                { 
+                  name: "소윤주 부원장", 
+                  role: "기능의학 / 최면 / 성상담 전문가", 
+                  image: "https://res.cloudinary.com/dxjz9ksjg/image/upload/v1774347139/KakaoTalk_20240521_123825759_gslvpg.jpg",
+                  desc: "기능의학 기반의 심신 통합 치유 전문가.",
+                  imgClass: "object-top"
+                }
+              ].map((expert, idx) => (
+                <div key={idx} className="text-center group">
+                  <div className="w-48 h-48 rounded-full overflow-hidden mx-auto mb-6 shadow-xl group-hover:scale-105 transition-transform duration-500">
+                    <img src={expert.image} alt={expert.name} className={`w-full h-full object-cover ${expert.imgClass || ''}`} referrerPolicy="no-referrer" />
+                  </div>
+                  <h3 className="text-xl font-black text-slate-900 mb-1 font-display">{expert.name}</h3>
+                  <p className="text-sm text-emerald-600 font-bold mb-4 font-display">{expert.role}</p>
+                  <p className="text-xs text-slate-500 leading-relaxed px-8 font-bold">{expert.desc}</p>
                 </div>
-                <h3 className="text-xl font-black text-slate-900 mb-1 font-display">{expert.name}</h3>
-                <p className="text-sm text-emerald-600 font-bold mb-4 font-display">{expert.role}</p>
-                <p className="text-xs text-slate-500 leading-relaxed px-8 font-bold">{expert.desc}</p>
-              </div>
-            ))}
+              ))}
+            </div>
+
+            {/* 2행: 변호사단 (3열: 허선무, 강주오, 백진욱) */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-16">
+              {[
+                { 
+                  name: "허선무 변호사", 
+                  role: "사법시험 54회 / 성범죄 전문 변호사", 
+                  image: "https://res.cloudinary.com/dxjz9ksjg/image/upload/v1774346463/member_view23_nnxzhn.jpg",
+                  desc: "대구지방법원 김천지원 조정위원 및 형사조정위원 역임.",
+                  imgClass: "object-top"
+                },
+                { 
+                  name: "강주오 변호사", 
+                  role: "법무법인 로하스 대표변호사", 
+                  image: "https://res.cloudinary.com/dxjz9ksjg/image/upload/v1776971476/73290c9b-6542-4f47-9ea0-ec8be1861807_plqybw.png",
+                  desc: "경북도청 및 구미시 법률상담관, 구미시의회 고문변호사."
+                },
+                { 
+                  name: "백진욱 변호사", 
+                  role: "법무법인 로하스 변호사", 
+                  image: "https://res.cloudinary.com/dxjz9ksjg/image/upload/v1777026382/bfb4a67d-9cf5-410b-9338-7f76ed3b73b9-md_qycut4.jpg",
+                  desc: "성범죄 및 형사 사건 전문 법률 조력자.",
+                  imgClass: "object-top"
+                }
+              ].map((expert, idx) => (
+                <div key={idx} className="text-center group">
+                  <div className="w-48 h-48 rounded-full overflow-hidden mx-auto mb-6 shadow-xl group-hover:scale-105 transition-transform duration-500">
+                    <img src={expert.image} alt={expert.name} className={`w-full h-full object-cover ${expert.imgClass || ''}`} referrerPolicy="no-referrer" />
+                  </div>
+                  <h3 className="text-xl font-black text-slate-900 mb-1 font-display">{expert.name}</h3>
+                  <p className="text-sm text-emerald-600 font-bold mb-4 font-display">{expert.role}</p>
+                  <p className="text-xs text-slate-500 leading-relaxed px-8 font-bold">{expert.desc}</p>
+                </div>
+              ))}
+            </div>
+
+            <div className="flex flex-wrap justify-center gap-x-8 gap-y-16">
+              {[
+                { 
+                  name: "문영애 교수", 
+                  role: "상담심리학 박사 / 한국신체심리치료 연구소 대표", 
+                  image: "https://res.cloudinary.com/dxjz9ksjg/image/upload/v1779201676/%EB%AC%B8%EC%98%81%EC%95%A0_%EA%B5%90%EC%88%981_q9eo9t.png",
+                  desc: "PhD 상담심리학 박사, 훨든크라이스 전문가.",
+                  imgClass: "object-top"
+                },
+                { 
+                  name: "이제승 교수", 
+                  role: "IMC 국제마음치유연구원 원장 / 심리상담학과 교수", 
+                  image: "https://res.cloudinary.com/dxjz9ksjg/image/upload/v1779153823/%EC%9D%B4%EC%A0%9C%EC%8A%B9_%EA%B5%90%EC%88%98_gkluyp.jpg",
+                  desc: "국제기독대학교 교수, 한국심리상담전문학회 학회장.",
+                  imgClass: "object-top"
+                }
+              ].map((expert, idx) => (
+                <div key={idx} className="w-full md:w-[calc(33.33%-2rem)] text-center group">
+                  <div className="w-48 h-48 rounded-full overflow-hidden mx-auto mb-6 shadow-xl group-hover:scale-105 transition-transform duration-500">
+                    <img src={expert.image} alt={expert.name} className={`w-full h-full object-cover ${expert.imgClass || ''}`} referrerPolicy="no-referrer" />
+                  </div>
+                  <h3 className="text-xl font-black text-slate-900 mb-1 font-display">{expert.name}</h3>
+                  <p className="text-sm text-emerald-600 font-bold mb-4 font-display">{expert.role}</p>
+                  <p className="text-xs text-slate-500 leading-relaxed px-8 font-bold">{expert.desc}</p>
+                </div>
+              ))}
+            </div>
+
+            {/* 4행: 상담 전문가 (3열: 이희철, 유보경, 윤송이) */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-16">
+              {[
+                { 
+                  name: "이희철 교수", 
+                  role: "심리학 박사 / 임상심리 전문가", 
+                  image: "https://res.cloudinary.com/dxjz9ksjg/image/upload/v1779201660/%EC%9D%B4%ED%9D%AC%EC%B2%A0_%EA%B5%90%EC%88%98_1_lvwzev.png",
+                  desc: "성범죄 가해자 인지왜곡 교정 및 상담 프로그램 연구.",
+                  imgClass: "object-top"
+                },
+                { 
+                  name: "유보경 선생님", 
+                  role: "상담심리 전문가 / 성인지 교육 강사", 
+                  image: "https://res.cloudinary.com/dxjz9ksjg/image/upload/v1779201666/%EC%9C%A0%EB%B3%B4%EA%B2%BD_%EC%84%A0%EC%83%9D%EB%8B%98_2_lobfoq.png",
+                  desc: "성범죄 예방 및 재발 방지를 위한 심리 교육 전문가.",
+                  imgClass: "object-top"
+                },
+                { 
+                  name: "윤송이 선생님", 
+                  role: "심리상담 전문가 / 성폭력 예방 교육 강사", 
+                  image: "https://res.cloudinary.com/dxjz9ksjg/image/upload/v1779201655/%EC%9C%A4%EC%86%A1%EC%9D%B4_%EC%84%A0%EC%83%9D%EB%8B%98_2_q34upo.png",
+                  desc: "인지행동치료 기반의 성인지 감수성 향상 교육.",
+                  imgClass: "object-top"
+                }
+              ].map((expert, idx) => (
+                <div key={idx} className="text-center group">
+                  <div className="w-48 h-48 rounded-full overflow-hidden mx-auto mb-6 shadow-xl group-hover:scale-105 transition-transform duration-500">
+                    <img src={expert.image} alt={expert.name} className={`w-full h-full object-cover ${expert.imgClass || ''}`} referrerPolicy="no-referrer" />
+                  </div>
+                  <h3 className="text-xl font-black text-slate-900 mb-1 font-display">{expert.name}</h3>
+                  <p className="text-sm text-emerald-600 font-bold mb-4 font-display">{expert.role}</p>
+                  <p className="text-xs text-slate-500 leading-relaxed px-8 font-bold">{expert.desc}</p>
+                </div>
+              ))}
+            </div>
+
+            {/* 5행: 상담 전문가 (3열: 전경숙, 박경실, 강민경) */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-16">
+              {[
+                { 
+                  name: "전경숙 선생님", 
+                  role: "상담심리 전문가 / 중독 상담사 /성상담 전문가", 
+                  image: "https://res.cloudinary.com/dxjz9ksjg/image/upload/v1779198673/%EC%A0%84%EA%B2%BD%EC%88%99_%EC%84%A0%EC%83%9D%EB%8B%98_hctbka.png",
+                  desc: "성인지 왜곡 및 중독 문제 해결을 위한 전문 심리 상담.",
+                  imgClass: "object-top"
+                },
+                { 
+                  name: "박경실 선생님", 
+                  role: "상담심리 전문가 / 청소년 상담사", 
+                  image: "https://res.cloudinary.com/dxjz9ksjg/image/upload/v1779201657/%EB%B0%95%EA%B2%BD%EC%8B%A4_%EC%84%A0%EC%83%9D%EB%8B%98_1_k3bg6h.png",
+                  desc: "청소년 및 성인 내담자의 심리적 안정과 긍정적 변화 지원.",
+                  imgClass: "object-top"
+                },
+                { 
+                  name: "강민경 선생님", 
+                  role: "상담심리 전문가 / 가족학 석사 / 부모, 가족 교육 강사", 
+                  image: "https://res.cloudinary.com/dxjz9ksjg/image/upload/v1779198673/%EA%B0%95%EB%AF%BC%EA%B2%BD_%EC%84%A0%EC%83%9D%EB%8B%98_2_bganyn.bmp",
+                  desc: "심리 정서적 지지를 통한 자존감 회복 및 재발 방지 상담.",
+                  imgClass: "object-top"
+                }
+              ].map((expert, idx) => (
+                <div key={idx} className="text-center group">
+                  <div className="w-48 h-48 rounded-full overflow-hidden mx-auto mb-6 shadow-xl bg-slate-50 group-hover:scale-105 transition-transform duration-500">
+                    <img src={expert.image} alt={expert.name} className={`w-full h-full object-cover ${expert.imgClass || ''}`} referrerPolicy="no-referrer" />
+                  </div>
+                  <h3 className="text-xl font-black text-slate-900 mb-1 font-display">{expert.name}</h3>
+                  <p className="text-sm text-emerald-600 font-bold mb-4 font-display">{expert.role}</p>
+                  <p className="text-xs text-slate-500 leading-relaxed px-8 font-bold">{expert.desc}</p>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-24 flex flex-col sm:flex-row justify-center gap-4 max-w-2xl mx-auto">
+              <a 
+                href={NAVER_PLACE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-1 px-10 py-5 bg-[#03C75A] text-white rounded-[24px] font-black text-lg shadow-xl shadow-emerald-100 hover:scale-105 transition-transform flex items-center justify-center gap-3"
+              >
+                <Calendar className="w-6 h-6" />
+                상담 예약하기
+              </a>
+              <Link 
+                to="/about/location"
+                className="flex-1 px-10 py-5 bg-primary-deep text-white rounded-[24px] font-black text-lg shadow-xl shadow-emerald-200/50 hover:scale-105 transition-transform flex items-center justify-center gap-3"
+              >
+                <MapPin className="w-6 h-6" />
+                오시는 길 안내
+              </Link>
+            </div>
           </div>
         </div>
       )}
@@ -7167,7 +7303,7 @@ const DigitalRiskTest = () => {
       {!showResult && (
         <div className="fixed top-0 left-0 w-full h-1.5 bg-slate-100 z-50">
           <motion.div 
-            className="h-full bg-[#4F46E5]"
+            className="h-full bg-primary-deep"
             initial={{ width: 0 }}
             animate={{ width: `${progress}%` }}
           />
@@ -7177,13 +7313,13 @@ const DigitalRiskTest = () => {
       {!showResult ? (
         <div className="space-y-16">
           <header className="relative py-12 px-8 rounded-[40px] bg-slate-50 border border-slate-100 overflow-hidden">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-indigo-500/5 blur-3xl rounded-full -mr-32 -mt-32" />
+            <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/5 blur-3xl rounded-full -mr-32 -mt-32" />
             <div className="relative z-10">
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-10 h-10 rounded-xl bg-white shadow-sm flex items-center justify-center">
-                  <Smartphone className="w-5 h-5 text-indigo-500" />
+                  <Smartphone className="w-5 h-5 text-emerald-500" />
                 </div>
-                <span className="text-indigo-500 font-bold tracking-widest text-xs uppercase">Self-Diagnosis</span>
+                <span className="text-emerald-500 font-bold tracking-widest text-xs uppercase">Self-Diagnosis</span>
               </div>
               <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4 leading-tight">
                 디지털 성범죄 <br /> 위험도 자가 체크
@@ -7218,8 +7354,8 @@ const DigitalRiskTest = () => {
                           <span className="inline-block px-3 py-1 rounded-full bg-slate-50 text-slate-400 text-[10px] font-bold uppercase tracking-wider mb-3">
                             Question {globalIdx + 1}
                           </span>
-                          <p className="text-xl md:text-2xl text-slate-800 font-medium leading-snug group-hover:text-[#4F46E5] transition-colors">
-                            <span className="text-[#4F46E5] font-black mr-3 opacity-30 group-hover:opacity-100 transition-opacity">{globalIdx + 1}.</span>
+                          <p className="text-xl md:text-2xl text-slate-800 font-medium leading-snug group-hover:text-emerald-600 transition-colors">
+                            <span className="text-emerald-600 font-black mr-3 opacity-30 group-hover:opacity-100 transition-opacity">{globalIdx + 1}.</span>
                             {q.text}
                           </p>
                         </div>
@@ -7240,8 +7376,8 @@ const DigitalRiskTest = () => {
                               }}
                               className={`relative flex flex-col items-center justify-center py-5 px-4 rounded-2xl transition-all border-2 ${
                                 answers[globalIdx] === item.score 
-                                  ? 'bg-[#4F46E5] border-[#4F46E5] text-white shadow-xl shadow-indigo-100 -translate-y-1' 
-                                  : 'bg-white border-slate-100 text-slate-400 hover:border-indigo-200 hover:bg-indigo-50/30'
+                                  ? 'bg-primary-deep border-primary-deep text-white shadow-xl shadow-emerald-100 -translate-y-1' 
+                                  : 'bg-white border-slate-100 text-slate-400 hover:border-emerald-200 hover:bg-emerald-50/30'
                               }`}
                             >
                               <span className={`text-2xl font-black mb-1 ${answers[globalIdx] === item.score ? 'text-white' : 'text-slate-200'}`}>
@@ -7253,7 +7389,7 @@ const DigitalRiskTest = () => {
                                   layoutId={`active-indicator-${globalIdx}`}
                                   className="absolute -top-1 -right-1 w-4 h-4 bg-white rounded-full flex items-center justify-center shadow-sm"
                                 >
-                                  <div className="w-2 h-2 bg-[#4F46E5] rounded-full" />
+                                  <div className="w-2 h-2 bg-emerald-500 rounded-full" />
                                 </motion.div>
                               )}
                             </button>
@@ -7271,7 +7407,7 @@ const DigitalRiskTest = () => {
             <div className="text-center">
               <p className="text-slate-400 text-sm mb-2">진행률 {Math.round(progress)}%</p>
               <div className="w-48 h-1 bg-slate-100 rounded-full overflow-hidden">
-                <div className="h-full bg-[#4F46E5] transition-all duration-500" style={{ width: `${progress}%` }} />
+                <div className="h-full bg-primary-deep transition-all duration-500" style={{ width: `${progress}%` }} />
               </div>
             </div>
 
@@ -7290,7 +7426,7 @@ const DigitalRiskTest = () => {
               }}
               className={`w-full max-w-md py-6 rounded-[24px] font-black text-xl tracking-tight transition-all ${
                 isComplete 
-                  ? 'bg-[#4F46E5] text-white shadow-2xl shadow-indigo-100 hover:bg-[#4338ca] hover:-translate-y-1 active:scale-95' 
+                  ? 'bg-primary-deep text-white shadow-2xl shadow-emerald-100 hover:bg-emerald-900 hover:-translate-y-1 active:scale-95' 
                   : 'bg-slate-100 text-slate-300 cursor-not-allowed'
               }`}
             >
@@ -7304,18 +7440,18 @@ const DigitalRiskTest = () => {
           animate={{ opacity: 1, scale: 1 }}
           className="space-y-12"
         >
-          <div className={`relative p-16 rounded-[60px] text-center ${result.bg} border border-indigo-100 overflow-hidden`}>
+          <div className={`relative p-16 rounded-[60px] text-center ${result.bg} border border-emerald-100 overflow-hidden`}>
             <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-white/20 to-transparent pointer-events-none" />
             <div className="relative z-10">
               <div className="w-24 h-24 rounded-[32px] bg-white shadow-2xl flex items-center justify-center mx-auto mb-10">
-                <Smartphone className="w-12 h-12 text-[#4F46E5]" />
+                <Smartphone className="w-12 h-12 text-emerald-600" />
               </div>
               <h2 className="text-xl font-bold text-slate-400 mb-2 uppercase tracking-[0.2em]">Analysis Result</h2>
               <div className="text-7xl font-black text-slate-900 mb-10 tracking-tighter">
                 {totalScore} <span className="text-2xl font-bold text-slate-300">/ 60</span>
               </div>
               
-              <div className={`inline-flex items-center gap-3 px-10 py-4 rounded-full font-black text-2xl mb-10 ${result.color} bg-white shadow-xl shadow-indigo-500/5`}>
+              <div className={`inline-flex items-center gap-3 px-10 py-4 rounded-full font-black text-2xl mb-10 ${result.color} bg-white shadow-xl shadow-emerald-500/5`}>
                 <div className={`w-3 h-3 rounded-full animate-pulse bg-current`} />
                 {result.title}
               </div>
@@ -7328,18 +7464,18 @@ const DigitalRiskTest = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="p-10 rounded-[40px] bg-slate-50 border border-slate-100 relative overflow-hidden group">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-indigo-500/5 blur-2xl rounded-full -mr-16 -mt-16 group-hover:bg-indigo-500/10 transition-colors" />
+              <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-500/5 blur-2xl rounded-full -mr-16 -mt-16 group-hover:bg-emerald-500/10 transition-colors" />
               <h4 className="font-bold text-2xl text-slate-900 mb-8 flex items-center gap-3">
-                <Zap className="w-6 h-6 text-indigo-500" />
+                <Zap className="w-6 h-6 text-emerald-500" />
                 위험성 분석
               </h4>
               <p className="text-slate-600 leading-relaxed text-lg">
                 디지털 성범죄는 '기록의 영구성'과 '확산의 신속성' 때문에 피해자에게 씻을 수 없는 고통을 줍니다. 또한 수사 기관의 포렌식 기술은 매우 정교하여 삭제된 기록도 복원이 가능합니다. 단순 시청이나 소지도 엄격한 처벌 대상이 됨을 명심해야 합니다.
               </p>
             </div>
-            <div className="p-10 rounded-[40px] bg-indigo-50 border border-indigo-100">
+            <div className="p-10 rounded-[40px] bg-emerald-50 border border-emerald-100">
               <h4 className="font-bold text-2xl text-slate-900 mb-8 flex items-center gap-3">
-                <ShieldCheck className="w-6 h-6 text-indigo-500" />
+                <ShieldCheck className="w-6 h-6 text-emerald-500" />
                 솔루션 가이드
               </h4>
               <ul className="space-y-6">
@@ -7349,7 +7485,7 @@ const DigitalRiskTest = () => {
                   "디지털 성범죄 관련 법률 및 윤리 교육"
                 ].map((item, idx) => (
                   <li key={idx} className="flex gap-4 items-start">
-                    <div className="w-8 h-8 rounded-xl bg-white flex items-center justify-center text-sm font-black text-indigo-500 shrink-0 shadow-sm">
+                    <div className="w-8 h-8 rounded-xl bg-white flex items-center justify-center text-sm font-black text-emerald-500 shrink-0 shadow-sm">
                       {idx + 1}
                     </div>
                     <span className="text-slate-700 font-medium text-lg leading-snug">{item}</span>
@@ -7374,7 +7510,7 @@ const DigitalRiskTest = () => {
               href={NAVER_PLACE_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-[2] py-6 bg-[#4F46E5] text-white text-center font-black text-lg rounded-[24px] hover:bg-[#4338ca] transition-all shadow-2xl shadow-indigo-100 active:scale-95"
+              className="flex-[2] py-6 bg-primary-deep text-white text-center font-black text-lg rounded-[24px] hover:bg-emerald-900 transition-all shadow-2xl shadow-emerald-100 active:scale-95"
             >
               전문가 상담 신청하기
             </a>
@@ -7432,7 +7568,7 @@ const GenderSensitivityTest = () => {
       {!showResult && (
         <div className="fixed top-0 left-0 w-full h-1.5 bg-slate-100 z-50">
           <motion.div 
-            className="h-full bg-[#4F46E5]"
+            className="h-full bg-primary-deep"
             initial={{ width: 0 }}
             animate={{ width: `${progress}%` }}
           />
@@ -7441,14 +7577,14 @@ const GenderSensitivityTest = () => {
 
       {!showResult ? (
         <div className="space-y-16">
-          <header className="relative py-12 px-8 rounded-[40px] bg-indigo-50 border border-indigo-100 overflow-hidden">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-indigo-500/5 blur-3xl rounded-full -mr-32 -mt-32" />
+          <header className="relative py-12 px-8 rounded-[40px] bg-emerald-50 border border-emerald-100 overflow-hidden">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/5 blur-3xl rounded-full -mr-32 -mt-32" />
             <div className="relative z-10">
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-10 h-10 rounded-xl bg-white shadow-sm flex items-center justify-center">
-                  <ClipboardCheck className="w-5 h-5 text-indigo-500" />
+                  <ClipboardCheck className="w-5 h-5 text-emerald-500" />
                 </div>
-                <span className="text-indigo-500 font-bold tracking-widest text-xs uppercase">Self-Diagnosis</span>
+                <span className="text-emerald-500 font-bold tracking-widest text-xs uppercase">Self-Diagnosis</span>
               </div>
               <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4 leading-tight">
                 성인지 감수성 <br /> 자가 체크 테스트
@@ -7483,8 +7619,8 @@ const GenderSensitivityTest = () => {
                           <span className="inline-block px-3 py-1 rounded-full bg-slate-50 text-slate-400 text-[10px] font-bold uppercase tracking-wider mb-3">
                             Question {globalIdx + 1}
                           </span>
-                          <p className="text-xl md:text-2xl text-slate-800 font-medium leading-snug group-hover:text-[#4F46E5] transition-colors">
-                            <span className="text-[#4F46E5] font-black mr-3 opacity-30 group-hover:opacity-100 transition-opacity">{globalIdx + 1}.</span>
+                          <p className="text-xl md:text-2xl text-slate-800 font-medium leading-snug group-hover:text-emerald-600 transition-colors">
+                            <span className="text-emerald-600 font-black mr-3 opacity-30 group-hover:opacity-100 transition-opacity">{globalIdx + 1}.</span>
                             {q.text}
                           </p>
                         </div>
@@ -7505,8 +7641,8 @@ const GenderSensitivityTest = () => {
                               }}
                               className={`relative flex flex-col items-center justify-center py-5 px-4 rounded-2xl transition-all border-2 ${
                                 answers[globalIdx] === item.score 
-                                  ? 'bg-[#4F46E5] border-[#4F46E5] text-white shadow-xl shadow-indigo-100 -translate-y-1' 
-                                  : 'bg-white border-slate-100 text-slate-400 hover:border-indigo-200 hover:bg-indigo-50/30'
+                                  ? 'bg-primary-deep border-primary-deep text-white shadow-xl shadow-emerald-100 -translate-y-1' 
+                                  : 'bg-white border-slate-100 text-slate-400 hover:border-emerald-200 hover:bg-emerald-50/30'
                               }`}
                             >
                               <span className={`text-2xl font-black mb-1 ${answers[globalIdx] === item.score ? 'text-white' : 'text-slate-200'}`}>
@@ -7518,7 +7654,7 @@ const GenderSensitivityTest = () => {
                                   layoutId={`active-indicator-sensitivity-${globalIdx}`}
                                   className="absolute -top-1 -right-1 w-4 h-4 bg-white rounded-full flex items-center justify-center shadow-sm"
                                 >
-                                  <div className="w-2 h-2 bg-[#4F46E5] rounded-full" />
+                                  <div className="w-2 h-2 bg-emerald-500 rounded-full" />
                                 </motion.div>
                               )}
                             </button>
@@ -7536,7 +7672,7 @@ const GenderSensitivityTest = () => {
             <div className="text-center">
               <p className="text-slate-400 text-sm mb-2">진행률 {Math.round(progress)}%</p>
               <div className="w-48 h-1 bg-slate-100 rounded-full overflow-hidden">
-                <div className="h-full bg-[#4F46E5] transition-all duration-500" style={{ width: `${progress}%` }} />
+                <div className="h-full bg-primary-deep transition-all duration-500" style={{ width: `${progress}%` }} />
               </div>
             </div>
 
@@ -7555,7 +7691,7 @@ const GenderSensitivityTest = () => {
               }}
               className={`w-full max-w-md py-6 rounded-[24px] font-black text-xl tracking-tight transition-all ${
                 isComplete 
-                  ? 'bg-[#4F46E5] text-white shadow-2xl shadow-indigo-100 hover:bg-[#4338ca] hover:-translate-y-1 active:scale-95' 
+                  ? 'bg-primary-deep text-white shadow-2xl shadow-emerald-100 hover:bg-emerald-900 hover:-translate-y-1 active:scale-95' 
                   : 'bg-slate-100 text-slate-300 cursor-not-allowed'
               }`}
             >
@@ -7569,18 +7705,18 @@ const GenderSensitivityTest = () => {
           animate={{ opacity: 1, scale: 1 }}
           className="space-y-12"
         >
-          <div className={`relative p-16 rounded-[60px] text-center ${result.bg} border border-indigo-100 overflow-hidden`}>
+          <div className={`relative p-16 rounded-[60px] text-center ${result.bg} border border-emerald-100 overflow-hidden`}>
             <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-white/20 to-transparent pointer-events-none" />
             <div className="relative z-10">
               <div className="w-24 h-24 rounded-[32px] bg-white shadow-2xl flex items-center justify-center mx-auto mb-10">
-                <ClipboardCheck className="w-12 h-12 text-[#4F46E5]" />
+                <ClipboardCheck className="w-12 h-12 text-emerald-600" />
               </div>
               <h2 className="text-xl font-bold text-slate-400 mb-2 uppercase tracking-[0.2em]">Analysis Result</h2>
               <div className="text-7xl font-black text-slate-900 mb-10 tracking-tighter">
                 {totalScore} <span className="text-2xl font-bold text-slate-300">/ 60</span>
               </div>
               
-              <div className={`inline-flex items-center gap-3 px-10 py-4 rounded-full font-black text-2xl mb-10 ${result.color} bg-white shadow-xl shadow-indigo-500/5`}>
+              <div className={`inline-flex items-center gap-3 px-10 py-4 rounded-full font-black text-2xl mb-10 ${result.color} bg-white shadow-xl shadow-emerald-500/5`}>
                 <div className={`w-3 h-3 rounded-full animate-pulse bg-current`} />
                 {result.title}
               </div>
@@ -7593,18 +7729,18 @@ const GenderSensitivityTest = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="p-10 rounded-[40px] bg-slate-50 border border-slate-100 relative overflow-hidden group">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-indigo-500/5 blur-2xl rounded-full -mr-16 -mt-16 group-hover:bg-indigo-500/10 transition-colors" />
+              <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-500/5 blur-2xl rounded-full -mr-16 -mt-16 group-hover:bg-emerald-500/10 transition-colors" />
               <h4 className="font-bold text-2xl text-slate-900 mb-8 flex items-center gap-3">
-                <Zap className="w-6 h-6 text-indigo-500" />
+                <Zap className="w-6 h-6 text-emerald-500" />
                 전문가 소견
               </h4>
               <p className="text-slate-600 leading-relaxed text-lg">
                 성인지 왜곡은 단순한 생각의 차이가 아니라, 타인의 권리를 침해할 수 있는 위험한 인지 구조입니다. 특히 '피해자 유발론'이나 '책임 회피'적 사고는 재범의 가장 큰 원인이 됩니다. 저희 센터는 이러한 왜곡된 인지 구조를 객관적으로 분석하고 교정하는 특화 프로그램을 운영하고 있습니다.
               </p>
             </div>
-            <div className="p-10 rounded-[40px] bg-indigo-50 border border-indigo-100">
+            <div className="p-10 rounded-[40px] bg-emerald-50 border border-emerald-100">
               <h4 className="font-bold text-2xl text-slate-900 mb-8 flex items-center gap-3">
-                <ShieldCheck className="w-6 h-6 text-indigo-500" />
+                <ShieldCheck className="w-6 h-6 text-emerald-500" />
                 다음 단계 안내
               </h4>
               <ul className="space-y-6">
@@ -7614,7 +7750,7 @@ const GenderSensitivityTest = () => {
                   "재범 방지를 위한 행동 계약 수립"
                 ].map((item, idx) => (
                   <li key={idx} className="flex gap-4 items-start">
-                    <div className="w-8 h-8 rounded-xl bg-white flex items-center justify-center text-sm font-black text-indigo-500 shrink-0 shadow-sm">
+                    <div className="w-8 h-8 rounded-xl bg-white flex items-center justify-center text-sm font-black text-emerald-500 shrink-0 shadow-sm">
                       {idx + 1}
                     </div>
                     <span className="text-slate-700 font-medium text-lg leading-snug">{item}</span>
@@ -7639,7 +7775,7 @@ const GenderSensitivityTest = () => {
               href={NAVER_PLACE_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-[2] py-6 bg-[#4F46E5] text-white text-center font-black text-lg rounded-[24px] hover:bg-[#4338ca] transition-all shadow-2xl shadow-indigo-100 active:scale-95"
+              className="flex-[2] py-6 bg-primary-deep text-white text-center font-black text-lg rounded-[24px] hover:bg-emerald-900 transition-all shadow-2xl shadow-emerald-100 active:scale-95"
             >
               상담 및 교육 신청하기
             </a>
@@ -7704,7 +7840,7 @@ const RecidivismRiskTest = () => {
       {!showResult && (
         <div className="fixed top-0 left-0 w-full h-1.5 bg-slate-100 z-50">
           <motion.div 
-            className="h-full bg-[#1565C0]"
+            className="h-full bg-primary-deep"
             initial={{ width: 0 }}
             animate={{ width: `${progress}%` }}
           />
@@ -7714,13 +7850,13 @@ const RecidivismRiskTest = () => {
       {!showResult ? (
         <div className="space-y-16">
           <header className="relative py-12 px-8 rounded-[40px] bg-slate-50 border border-slate-100 overflow-hidden text-slate-900">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-indigo-500/5 blur-3xl rounded-full -mr-32 -mt-32" />
+            <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/5 blur-3xl rounded-full -mr-32 -mt-32" />
             <div className="relative z-10">
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-10 h-10 rounded-xl bg-white shadow-sm flex items-center justify-center">
-                  <Scale className="w-5 h-5 text-indigo-500" />
+                  <Scale className="w-5 h-5 text-emerald-500" />
                 </div>
-                <span className="text-indigo-500 font-bold tracking-widest text-xs uppercase">Self-Diagnosis</span>
+                <span className="text-emerald-500 font-bold tracking-widest text-xs uppercase">Self-Diagnosis</span>
               </div>
               <h2 className="text-3xl md:text-4xl font-bold mb-4 leading-tight">
                 재범 위험성 <br /> 간이 측정
@@ -7755,8 +7891,8 @@ const RecidivismRiskTest = () => {
                           <span className="inline-block px-3 py-1 rounded-full bg-slate-50 text-slate-400 text-[10px] font-bold uppercase tracking-wider mb-3">
                             Question {globalIdx + 1}
                           </span>
-                          <p className="text-xl md:text-2xl text-slate-800 font-medium leading-snug group-hover:text-indigo-600 transition-colors">
-                            <span className="text-indigo-500 font-black mr-3 opacity-30 group-hover:opacity-100 transition-opacity">{globalIdx + 1}.</span>
+                          <p className="text-xl md:text-2xl text-slate-800 font-medium leading-snug group-hover:text-emerald-600 transition-colors">
+                            <span className="text-emerald-600 font-black mr-3 opacity-30 group-hover:opacity-100 transition-opacity">{globalIdx + 1}.</span>
                             {q.text}
                           </p>
                         </div>
@@ -7777,8 +7913,8 @@ const RecidivismRiskTest = () => {
                               }}
                               className={`relative flex flex-col items-center justify-center py-5 px-4 rounded-2xl transition-all border-2 ${
                                 answers[globalIdx] === item.score 
-                                  ? 'bg-[#1565C0] border-[#1565C0] text-white shadow-xl shadow-blue-100 -translate-y-1' 
-                                  : 'bg-white border-slate-100 text-slate-400 hover:border-indigo-200 hover:bg-indigo-50/30'
+                                  ? 'bg-primary-deep border-primary-deep text-white shadow-xl shadow-emerald-100 -translate-y-1' 
+                                  : 'bg-white border-slate-100 text-slate-400 hover:border-emerald-200 hover:bg-emerald-50/30'
                               }`}
                             >
                               <span className={`text-2xl font-black mb-1 ${answers[globalIdx] === item.score ? 'text-white' : 'text-slate-200'}`}>
@@ -7800,7 +7936,7 @@ const RecidivismRiskTest = () => {
             <div className="text-center">
               <p className="text-slate-400 text-sm mb-2">진행률 {Math.round(progress)}%</p>
               <div className="w-48 h-1 bg-slate-100 rounded-full overflow-hidden">
-                <div className="h-full bg-[#1565C0] transition-all duration-500" style={{ width: `${progress}%` }} />
+                <div className="h-full bg-primary-deep transition-all duration-500" style={{ width: `${progress}%` }} />
               </div>
             </div>
 
@@ -7819,7 +7955,7 @@ const RecidivismRiskTest = () => {
               }}
               className={`w-full max-w-md py-6 rounded-[24px] font-black text-xl tracking-tight transition-all ${
                 isComplete 
-                  ? 'bg-indigo-600 text-white shadow-2xl shadow-indigo-100 hover:bg-indigo-700 hover:-translate-y-1 active:scale-95' 
+                  ? 'bg-primary-deep text-white shadow-2xl shadow-emerald-100 hover:bg-emerald-900 hover:-translate-y-1 active:scale-95' 
                   : 'bg-slate-100 text-slate-300 cursor-not-allowed'
               }`}
             >
@@ -7844,7 +7980,7 @@ const RecidivismRiskTest = () => {
                 {totalScore} <span className="text-2xl font-bold text-slate-300">/ 60</span>
               </div>
               
-              <div className={`inline-flex items-center gap-3 px-10 py-4 rounded-full font-black text-2xl mb-10 ${result.color} bg-white shadow-xl shadow-slate-500/5`}>
+              <div className={`inline-flex items-center gap-3 px-10 py-4 rounded-full font-black text-2xl mb-10 ${result.color} bg-white shadow-xl shadow-emerald-500/5`}>
                 <div className={`w-3 h-3 rounded-full animate-pulse bg-current`} />
                 {result.title}
               </div>
@@ -7857,9 +7993,9 @@ const RecidivismRiskTest = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="p-10 rounded-[40px] bg-slate-50 text-slate-900 relative overflow-hidden group border border-slate-100">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-indigo-500/5 blur-2xl rounded-full -mr-16 -mt-16 group-hover:bg-indigo-500/10 transition-colors" />
+              <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-500/5 blur-2xl rounded-full -mr-16 -mt-16 group-hover:bg-emerald-500/10 transition-colors" />
               <h4 className="font-bold text-2xl mb-8 flex items-center gap-3">
-                <Zap className="w-6 h-6 text-[#1565C0]" />
+                <Zap className="w-6 h-6 text-emerald-500" />
                 위험 요인 분석
               </h4>
               <p className="text-slate-500 leading-relaxed text-lg">
@@ -7868,7 +8004,7 @@ const RecidivismRiskTest = () => {
             </div>
             <div className="p-10 rounded-[40px] bg-slate-50 border border-slate-200">
               <h4 className="font-bold text-2xl text-slate-900 mb-8 flex items-center gap-3">
-                <ShieldCheck className="w-6 h-6 text-indigo-500" />
+                <ShieldCheck className="w-6 h-6 text-emerald-500" />
                 재발 방지 솔루션
               </h4>
               <ul className="space-y-6">
@@ -8525,10 +8661,10 @@ const MediaArchive = () => {
         ].map((stat, i) => (
           <div key={i} className="bg-white p-8 rounded-[32px] border border-slate-100 shadow-sm flex items-center justify-between group hover:shadow-md transition-all">
             <div className="space-y-1">
-              <p className="text-sm font-bold text-slate-400 uppercase tracking-wider">{stat.label}</p>
-              <p className="text-2xl font-black text-slate-900">{stat.value}</p>
+              <p className="text-sm font-bold text-emerald-600 uppercase tracking-wider">{stat.label}</p>
+              <p className="text-2xl font-black text-emerald-950">{stat.value}</p>
             </div>
-            <div className="w-14 h-14 rounded-2xl bg-slate-50 text-slate-400 flex items-center justify-center group-hover:bg-indigo-50 group-hover:text-indigo-600 transition-colors">
+            <div className="w-14 h-14 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center group-hover:bg-emerald-100 transition-colors">
               <stat.icon className="w-7 h-7" />
             </div>
           </div>
@@ -8539,7 +8675,7 @@ const MediaArchive = () => {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         {/* Category Stats Graph */}
         <div className="bg-white p-8 rounded-[40px] border border-slate-100 shadow-sm space-y-6">
-          <div className="flex items-center gap-3 text-indigo-600">
+          <div className="flex items-center gap-3 text-emerald-600">
             <PieChart className="w-6 h-6" />
             <h4 className="font-bold">카테고리별 분포</h4>
           </div>
@@ -8547,12 +8683,12 @@ const MediaArchive = () => {
             {categoryStats.slice(0, 4).map((stat, i) => (
               <div key={i} className="space-y-1.5">
                 <div className="flex justify-between text-xs font-bold">
-                  <span className="text-slate-600">{stat.name}</span>
-                  <span className="text-indigo-600">{stat.count}건</span>
+                  <span className="text-emerald-700">{stat.name}</span>
+                  <span className="text-emerald-600">{stat.count}건</span>
                 </div>
-                <div className="h-1.5 w-full bg-slate-50 rounded-full overflow-hidden">
+                <div className="h-1.5 w-full bg-emerald-50/50 rounded-full overflow-hidden">
                   <div 
-                    className="h-full bg-indigo-500 rounded-full" 
+                    className="h-full bg-emerald-500 rounded-full" 
                     style={{ width: `${(stat.count / stats.total) * 100}%` }}
                   />
                 </div>
@@ -8563,14 +8699,14 @@ const MediaArchive = () => {
 
         {/* Monthly Archive */}
         <div className="bg-white p-8 rounded-[40px] border border-slate-100 shadow-sm space-y-6">
-          <div className="flex items-center gap-3 text-indigo-600">
+          <div className="flex items-center gap-3 text-emerald-600">
             <Clock className="w-6 h-6" />
             <h4 className="font-bold">월별 아카이브</h4>
           </div>
           <div className="grid grid-cols-2 gap-2">
             {monthlyArchive.map((month, i) => (
-              <div key={i} className="px-3 py-2 bg-slate-50 rounded-xl text-center">
-                <span className="text-xs font-black text-slate-400">{month.replace('-', '.')}</span>
+              <div key={i} className="px-3 py-2 bg-emerald-50/50 rounded-xl text-center border border-emerald-100/50">
+                <span className="text-xs font-black text-emerald-700">{month.replace('-', '.')}</span>
               </div>
             ))}
           </div>
@@ -8587,8 +8723,8 @@ const MediaArchive = () => {
                 onClick={() => setFilter(cat)}
                 className={`px-5 py-2.5 rounded-full text-sm font-bold transition-all ${
                   filter === cat 
-                    ? 'bg-indigo-600 text-white shadow-lg shadow-indigo-100' 
-                    : 'bg-slate-50 text-slate-500 hover:bg-slate-100'
+                    ? 'bg-primary-deep text-white shadow-lg shadow-emerald-200' 
+                    : 'bg-emerald-50/50 text-emerald-700 hover:bg-emerald-100 border border-emerald-100/50'
                 }`}
               >
                 {cat}
@@ -8599,7 +8735,7 @@ const MediaArchive = () => {
             <select 
               value={sortBy}
               onChange={(e) => setSortBy(e.target.value)}
-              className="bg-slate-50 border-none rounded-2xl px-4 py-3 text-sm font-bold text-slate-600 focus:ring-2 focus:ring-indigo-500 outline-none"
+              className="bg-emerald-50/50 border border-emerald-100/50 rounded-2xl px-4 py-3 text-sm font-bold text-emerald-800 focus:ring-2 focus:ring-emerald-500 outline-none"
             >
               <option value="최신순">최신순</option>
               <option value="카테고리순">카테고리순</option>
@@ -8613,7 +8749,7 @@ const MediaArchive = () => {
             placeholder="기사 제목, 요약, 언론사 검색..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full pl-14 pr-6 py-5 bg-slate-50 border-none rounded-3xl text-slate-900 placeholder:text-slate-400 focus:ring-2 focus:ring-indigo-500 outline-none font-medium"
+            className="w-full pl-14 pr-6 py-5 bg-emerald-50/50 border border-emerald-100/50 rounded-3xl text-emerald-900 placeholder:text-emerald-300 focus:ring-2 focus:ring-emerald-500 outline-none font-medium"
           />
         </div>
       </div>
@@ -8633,7 +8769,7 @@ const MediaArchive = () => {
                 <span className="px-4 py-1.5 bg-emerald-50 text-emerald-600 rounded-full text-[11px] font-black uppercase tracking-widest">
                   {item.category}
                 </span>
-                <span className="text-xs font-bold text-slate-400 flex items-center gap-1.5">
+                <span className="text-xs font-bold text-emerald-500 flex items-center gap-1.5">
                   <Calendar className="w-3.5 h-3.5" />
                   {item.date}
                 </span>
@@ -8648,16 +8784,16 @@ const MediaArchive = () => {
                 </h3>
               </div>
 
-              <p className="text-slate-600 leading-relaxed text-sm lg:text-base">
+              <p className="text-emerald-900/70 leading-relaxed text-sm lg:text-base">
                 {item.summary}
               </p>
 
-              <div className="p-5 bg-slate-50 rounded-2xl border border-slate-100">
+              <div className="p-5 bg-emerald-50/30 rounded-2xl border border-emerald-100/50">
                 <div className="flex items-start gap-3">
-                  <ShieldCheck className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" />
+                  <ShieldCheck className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
                   <div>
-                    <p className="text-xs font-black text-slate-400 uppercase tracking-wider mb-1">상담/대응 포인트</p>
-                    <p className="text-sm text-slate-700 font-medium leading-relaxed">
+                    <p className="text-xs font-black text-emerald-500/70 uppercase tracking-wider mb-1">상담/대응 포인트</p>
+                    <p className="text-sm text-emerald-900 font-medium leading-relaxed">
                       {item.point}
                     </p>
                   </div>
@@ -8670,7 +8806,7 @@ const MediaArchive = () => {
                 href={item.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full py-4 bg-[#1565C0] text-white rounded-2xl font-bold flex items-center justify-center gap-2 hover:bg-[#115599] transition-all group/btn shadow-lg shadow-blue-100"
+                className="w-full py-4 bg-primary-deep text-white rounded-2xl font-bold flex items-center justify-center gap-2 hover:bg-emerald-900 transition-all group/btn shadow-lg shadow-emerald-100"
               >
                 기사 원문 보기
                 <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
@@ -8690,29 +8826,29 @@ const MediaArchive = () => {
       )}
 
       {/* Footer Disclaimer */}
-      <footer className="bg-slate-50 rounded-[48px] p-10 lg:p-16 text-slate-900 space-y-8 border border-slate-100">
+      <footer className="bg-emerald-50/50 rounded-[48px] p-10 lg:p-16 text-emerald-900 space-y-8 border border-emerald-100">
         <div className="flex items-center gap-3">
-          <AlertCircle className="w-6 h-6 text-[#1565C0]" />
+          <AlertCircle className="w-6 h-6 text-emerald-600" />
           <h4 className="text-xl font-bold">자료 이용 시 유의사항</h4>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-sm text-slate-500 leading-relaxed">
           <ul className="space-y-3">
             <li className="flex gap-2">
-              <div className="w-1.5 h-1.5 rounded-full bg-[#1565C0] mt-1.5 shrink-0" />
+              <div className="w-1.5 h-1.5 rounded-full bg-emerald-600 mt-1.5 shrink-0" />
               본 페이지는 관련 기사 제목과 링크, 그리고 자체 작성한 짧은 정보 요약을 정리한 자료입니다.
             </li>
             <li className="flex gap-2">
-              <div className="w-1.5 h-1.5 rounded-full bg-[#1565C0] mt-1.5 shrink-0" />
+              <div className="w-1.5 h-1.5 rounded-full bg-emerald-600 mt-1.5 shrink-0" />
               기사 원문과 저작권은 각 언론사 및 저작권자에게 있습니다.
             </li>
           </ul>
           <ul className="space-y-3">
             <li className="flex gap-2">
-              <div className="w-1.5 h-1.5 rounded-full bg-[#1565C0] mt-1.5 shrink-0" />
+              <div className="w-1.5 h-1.5 rounded-full bg-emerald-600 mt-1.5 shrink-0" />
               구체적인 법률 판단은 사건별로 다를 수 있으며, 필요 시 변호사 상담이 필요할 수 있습니다.
             </li>
             <li className="flex gap-2">
-              <div className="w-1.5 h-1.5 rounded-full bg-[#1565C0] mt-1.5 shrink-0" />
+              <div className="w-1.5 h-1.5 rounded-full bg-emerald-600 mt-1.5 shrink-0" />
               심리상담은 사건 이후의 인식 변화, 재범방지 노력, 자기이해를 돕는 과정입니다.
             </li>
           </ul>
@@ -8737,7 +8873,7 @@ const ArchivePage = ({ title, slug }: { title: string; slug: string }) => {
       className="bg-white min-h-screen"
     >
       <div 
-        className={`relative py-12 lg:py-24 border-b border-slate-100 overflow-hidden ${slug === 'media' ? 'bg-cover bg-center' : 'bg-slate-50'}`}
+        className={`relative py-12 lg:py-24 border-b border-emerald-100 overflow-hidden ${slug === 'media' ? 'bg-cover bg-center' : 'bg-emerald-50/50'}`}
         style={slug === 'media' ? { backgroundImage: 'url(https://9tsiiw6i9140.edge.naverncp.com/files/sgrsoft/202603/c288b30e6dbc92d5fcfcf44bbd2e765d.png)' } : {}}
       >
         {slug === 'media' && <div className="absolute inset-0 bg-white/60 backdrop-blur-[1px]" />}
@@ -8749,7 +8885,7 @@ const ArchivePage = ({ title, slug }: { title: string; slug: string }) => {
                   setActiveTest(null);
                   setActivePost(null);
                 }}
-                className={`p-2 rounded-full border transition-colors ${slug === 'media' ? 'bg-white border-slate-200 text-slate-600 hover:text-[#4F46E5]' : 'bg-white border-slate-200 text-slate-600 hover:text-[#4F46E5]'}`}
+                className={`p-2 rounded-full border transition-colors ${slug === 'media' ? 'bg-white border-slate-200 text-slate-600 hover:text-emerald-600' : 'bg-white border-slate-200 text-slate-600 hover:text-emerald-600'}`}
               >
                 <ArrowLeft className="w-5 h-5" />
               </button>
@@ -8796,7 +8932,7 @@ const ArchivePage = ({ title, slug }: { title: string; slug: string }) => {
             ].map((item, idx) => (
               <div key={idx} className="p-10 rounded-[32px] border border-slate-100 bg-white shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all group">
                 <div className="flex justify-between items-start mb-6">
-                  <div className="w-12 h-12 rounded-2xl bg-emerald-50 text-primary-deep flex items-center justify-center group-hover:bg-primary-deep group-hover:text-white transition-colors">
+                  <div className="w-12 h-12 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center group-hover:bg-emerald-600 group-hover:text-white transition-colors">
                     <ClipboardCheck className="w-6 h-6" />
                   </div>
                   <span className="text-xs font-bold text-slate-400 bg-slate-50 px-3 py-1 rounded-full">{item.items} 문항</span>
@@ -8807,7 +8943,7 @@ const ArchivePage = ({ title, slug }: { title: string; slug: string }) => {
                   onClick={() => (item.id === 'gender' || item.id === 'digital' || item.id === 'impulse' || item.id === 'recidivism') && setActiveTest(item.title)}
                   className={`w-full py-4 font-bold rounded-2xl transition-colors ${
                     (item.id === 'gender' || item.id === 'digital' || item.id === 'impulse' || item.id === 'recidivism')
-                      ? 'bg-indigo-600 text-white hover:bg-indigo-700' 
+                      ? 'bg-primary-deep text-white hover:bg-emerald-900' 
                       : 'bg-slate-100 text-slate-400 cursor-not-allowed'
                   }`}
                 >
@@ -8854,11 +8990,11 @@ const ArchivePage = ({ title, slug }: { title: string; slug: string }) => {
                 </div>
               </div>
               <div className="space-y-2">
-                <h3 className="text-xl font-bold text-slate-900 group-hover:text-[#4F46E5] transition-colors leading-snug">
+                <h3 className="text-xl font-bold text-slate-900 group-hover:text-emerald-600 transition-colors leading-snug">
                   {post.title}
                 </h3>
                 {post.content && (
-                  <div className="flex items-center gap-2 text-[#4F46E5] font-bold text-sm opacity-0 group-hover:opacity-100 transition-opacity">
+                  <div className="flex items-center gap-2 text-emerald-600 font-bold text-sm opacity-0 group-hover:opacity-100 transition-opacity">
                     자세히 보기 <ArrowRight className="w-4 h-4" />
                   </div>
                 )}
@@ -8876,7 +9012,7 @@ const ArchivePage = ({ title, slug }: { title: string; slug: string }) => {
           >
             <div className="mb-12">
               <div className="flex items-center gap-3 mb-6">
-                <span className="px-3 py-1 bg-indigo-50 text-indigo-600 rounded-full text-xs font-bold uppercase tracking-wider">
+                <span className="px-3 py-1 bg-emerald-50 text-emerald-600 rounded-full text-xs font-bold uppercase tracking-wider">
                   {activePost.category}
                 </span>
               </div>
@@ -8904,7 +9040,7 @@ const ArchivePage = ({ title, slug }: { title: string; slug: string }) => {
                 <div key={idx}>
                   {block.type === 'header' ? (
                     <h3 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
-                      <div className="w-1.5 h-8 bg-indigo-500 rounded-full" />
+                      <div className="w-1.5 h-8 bg-emerald-500 rounded-full" />
                       {block.value}
                     </h3>
                   ) : (
@@ -8929,7 +9065,7 @@ const ArchivePage = ({ title, slug }: { title: string; slug: string }) => {
                 href={NAVER_PLACE_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-12 py-5 bg-[#1565C0] text-white text-center font-black rounded-2xl hover:bg-[#115599] transition-all shadow-xl shadow-blue-100 active:scale-95"
+                className="px-12 py-5 bg-primary-deep text-white text-center font-black rounded-2xl hover:bg-emerald-900 transition-all shadow-xl shadow-emerald-100 active:scale-95"
               >
                 전문가와 상담 시작하기
               </a>
@@ -8958,14 +9094,14 @@ const ApplicationPage = () => {
       className="bg-slate-50 min-h-screen flex items-center justify-center py-24"
     >
       <div className="text-center">
-        <div className="w-16 h-16 bg-indigo-100 text-[#4F46E5] rounded-full flex items-center justify-center mx-auto mb-6 animate-bounce">
+        <div className="w-16 h-16 bg-emerald-50 text-emerald-600 rounded-full flex items-center justify-center mx-auto mb-6 animate-bounce">
           <Calendar className="w-8 h-8" />
         </div>
         <h1 className="text-2xl font-bold text-slate-900 mb-2">네이버 예약으로 이동 중입니다</h1>
         <p className="text-slate-500 mb-8">잠시만 기다려 주세요...</p>
         <a 
           href={NAVER_PLACE_URL}
-          className="px-8 py-4 bg-[#4F46E5] text-white font-bold rounded-2xl hover:bg-[#4338ca] transition-all"
+          className="px-8 py-4 bg-primary-deep text-white font-bold rounded-2xl hover:bg-emerald-900 transition-all shadow-xl shadow-emerald-100"
         >
           이동하지 않는다면 여기를 클릭하세요
         </a>
