@@ -638,9 +638,9 @@ const HomeExperts = () => (
           },
           { 
             name: "허선무 변호사", 
-            role: "변호사 / 성범죄 전문", 
-            tags: ["사법시험 54회", "성범죄 전문"],
-            desc: "사법시험 54회 합격 및 사법연수원(44기)을 수료한 법률 전문가입니다. 대구지방법원 김천지원 조정위원, 대구지방검찰청 김천지청 형사조정위원 등을 역임하며 대한변호사협회에 등록된 성범죄 전문 변호사로 활동하고 있습니다.",
+            role: "법무법인 소울 변호사 / 성범죄 전문", 
+            tags: ["사법시험 54회", "법무법인 소울 변호사", "성범죄 전문"],
+            desc: "사법시험 54회 합격 및 사법연수원(44기)을 수료한 법률 전문가입니다. 현재 법무법인 소울 변호사로 활동 중이며, 창원지방법원 조정위원, 창원지방검찰청 형사조정위원, 대한법률구조공단 구조위원 등을 역임하고 대한변호사협회에 등록된 성범죄 전문 변호사로 활동하고 있습니다.",
             image: "https://res.cloudinary.com/dxjz9ksjg/image/upload/v1774346463/member_view23_nnxzhn.jpg" 
           }
         ].map((expert, idx) => (
@@ -5995,9 +5995,9 @@ const AboutPage = ({ title, slug }: { title: string; slug: string }) => {
               {[
                 { 
                   name: "허선무 변호사", 
-                  role: "사법시험 54회 / 성범죄 전문 변호사", 
+                  role: "법무법인 소울 변호사 / 성범죄 전문 변호사", 
                   image: "https://res.cloudinary.com/dxjz9ksjg/image/upload/v1774346463/member_view23_nnxzhn.jpg",
-                  desc: "대구지방법원 김천지원 조정위원 및 형사조정위원 역임.",
+                  desc: "현재 법무법인 소울 변호사. 창원지방법원 조정위원, 창원지방검찰청 형사조정위원, 대한법률구조공단 구조위원 역임.",
                   imgClass: "object-top"
                 },
                 { 

@@ -87,14 +87,14 @@ const DentistryLandingPage: React.FC = () => {
           <img 
             src="https://res.cloudinary.com/dxjz9ksjg/image/upload/v1779013949/%EB%AA%A8%EB%B0%94%EC%9D%BC%EC%9A%A9_%EC%9D%B4%EB%AF%B8%EC%A7%80_tdjn9z.png" 
             alt="Counseling Center Mobile" 
-            className="block sm:hidden w-full h-full object-contain bg-slate-900" 
+            className="block sm:hidden w-full h-full object-contain bg-slate-800" 
           />
           <img 
             src="https://res.cloudinary.com/dxjz9ksjg/image/upload/v1777958782/8be3688f-db30-4faf-a837-2ab54d9a5272_de9aaa.png" 
             alt="Counseling Center" 
             className="hidden sm:block w-full h-full object-cover sm:object-top" 
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-900/60 via-slate-900/30 to-transparent lg:from-slate-900/80 lg:via-slate-900/40"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-900/40 via-slate-900/20 to-transparent lg:from-slate-900/60 lg:via-slate-900/30"></div>
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
@@ -300,9 +300,9 @@ const DentistryLandingPage: React.FC = () => {
               },
               { 
                 name: "허선무 변호사", 
-                role: "변호사 / 성범죄 전문", 
-                tags: ["사법시험 54회", "성범죄 전문"],
-                desc: "사법시험 54회 합격 및 사법연수원(44기)을 수료한 법률 전문가입니다. 대구지방법원 조정위원, 대구지방검찰청 형사조정위원 등을 역임하며 대한변호사협회에 등록된 성범죄 전문 변호사로 활동하고 있습니다.",
+                role: "법무법인 소울 변호사 / 성범죄 전문", 
+                tags: ["사법시험 54회", "법무법인 소울 변호사", "성범죄 전문"],
+                desc: "사법시험 54회 합격 및 사법연수원(44기)을 수료한 법률 전문가입니다. 현재 법무법인 소울 변호사로 활동 중이며, 창원지방법원 조정위원, 창원지방검찰청 형사조정위원, 대한법률구조공단 구조위원 등을 역임하고 대한변호사협회에 등록된 성범죄 전문 변호사로 활동하고 있습니다.",
                 image: "https://res.cloudinary.com/dxjz9ksjg/image/upload/v1774346463/member_view23_nnxzhn.jpg" 
               }
             ].map((expert, idx) => (
