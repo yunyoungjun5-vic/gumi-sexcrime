@@ -66,8 +66,8 @@ interface NavItem {
 }
 
 // --- Constants & Data ---
-const NAVER_PLACE_URL = "https://map.naver.com/p/entry/place/20046727?c=15.00,0,0,0,dh&placePath=/ticket?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202605150022&locale=ko&svcName=map_pcv5";
-const CONTACT_PHONE = "0507-1378-5463";
+const NAVER_PLACE_URL = "https://map.naver.com/p/entry/place/2045593340?c=15.00,0,0,0,dh&placePath=%2Fticket%3Ffrom%3Dmap%26fromPanelNum%3D1%26additionalHeight%3D76%26timestamp%3D202606261655%26locale%3Dko%26svcName%3Dmap_pcv5%26entry%3Dbmp";
+const CONTACT_PHONE = "0507-1332-7554";
 
 export const NAV_STRUCTURE: NavItem[] = [
   {
@@ -869,6 +869,10 @@ const Footer = () => (
             <div className="flex items-center gap-3 text-slate-300 text-[13px]">
               <PhoneCall className="w-4 h-4 text-slate-400 shrink-0" />
               <span className="font-black">{CONTACT_PHONE}</span>
+            </div>
+            <div className="text-slate-300 text-[13px] font-bold leading-relaxed space-y-1">
+              <p>사업자 번호 : 437-93-02099</p>
+              <p>대표자 : 추청완</p>
             </div>
           </div>
           <div className="flex gap-4 relative z-10">

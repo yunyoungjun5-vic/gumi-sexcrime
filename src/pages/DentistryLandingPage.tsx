@@ -59,8 +59,8 @@ import MediaAppearanceTeaser from '../components/MediaAppearanceTeaser';
 import BroadcastMarquee from '../components/BroadcastMarquee';
 import { NAV_STRUCTURE } from '../App';
 
-const NAVER_PLACE_URL = "https://map.naver.com/p/entry/place/20046727?c=15.00,0,0,0,dh&placePath=/ticket?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202605150022&locale=ko&svcName=map_pcv5";
-const CONTACT_PHONE = "0507-1378-5463";
+const NAVER_PLACE_URL = "https://map.naver.com/p/entry/place/2045593340?c=15.00,0,0,0,dh&placePath=%2Fticket%3Ffrom%3Dmap%26fromPanelNum%3D1%26additionalHeight%3D76%26timestamp%3D202606261655%26locale%3Dko%26svcName%3Dmap_pcv5%26entry%3Dbmp";
+const CONTACT_PHONE = "0507-1332-7554";
 
 const LogoIcon = ({ className }: { className?: string }) => (
   <Scale className={className} />
@@ -138,7 +138,7 @@ const DentistryLandingPage: React.FC = () => {
                 <Calendar className="w-5 h-5" />
               </a>
               <a href={`tel:${CONTACT_PHONE}`} className="inline-flex justify-center items-center gap-2 border-2 text-base font-bold px-8 py-4 rounded-full transition-all bg-white/10 backdrop-blur-md hover:bg-white text-white hover:text-slate-900 border-white/20 break-keep text-center">
-                전화상담 문의 0507-1378-5463
+                전화상담 문의 {CONTACT_PHONE}
               </a>
             </div>
           </div>
