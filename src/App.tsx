@@ -627,7 +627,7 @@ const HomeExperts = () => (
             role: "대표원장 / 상담학 박사", 
             tags: ["성범죄 교정 특화", "국제 임상최면치료사"],
             desc: "동국대 심리상담 석사 및 로드랜드대 상담학 박사 학위를 보유한 심리치료 전문가입니다. 미국최면사고시위원회(ACHE) 국제 의학최면치료사로서 뇌인지과학과 심리치료를 결합한 고도의 교정 프로그램을 운영합니다.",
-            image: "https://tpqens1j9138.edge.naverncp.com/MNiExO50AC?src=https%3A%2F%2Fpage24.app%2Fapi%2Ffile%2FmodooImgPasre%3FsiteId%3Dcriminalmhs%26image_url%3Dhttps%3A%2F%2F9tsiiw6i9140.edge.naverncp.com%2Ffiles%2Fcriminalmhs%2F202507%2Ffffbec7c7fc9a06e84210f84e37366dc.jpg%26mcode%3D1112&type=m&w=1980&h=1980&ttype=png" 
+            image: "https://res.cloudinary.com/dxjz9ksjg/image/upload/v1774346422/ChatGPT_Image_2026%EB%85%84_3%EC%9B%94_1%EC%9D%BC_%EC%98%A4%ED%9B%84_10_34_52_ydee1z.png" 
           },
           { 
             name: "소윤주 부원장", 
@@ -872,7 +872,7 @@ const Footer = () => (
             </div>
             <div className="text-slate-300 text-[13px] font-bold leading-relaxed space-y-1">
               <p>사업자 번호 : 437-93-02099</p>
-              <p>대표자 : 추청완</p>
+              <p>대표자 : 윤영준</p>
             </div>
           </div>
           <div className="flex gap-4 relative z-10">
@@ -5684,7 +5684,7 @@ const AboutPage = ({ title, slug }: { title: string; slug: string }) => {
             <div className="lg:col-span-1 lg:sticky lg:top-32">
               <div className="rounded-3xl overflow-hidden shadow-2xl mb-8">
                 <img 
-                  src="https://tpqens1j9138.edge.naverncp.com/MNiExO50AC?src=https%3A%2F%2Fpage24.app%2Fapi%2Ffile%2FmodooImgPasre%3FsiteId%3Dcriminalmhs%26image_url%3Dhttps%3A%2F%2F9tsiiw6i9140.edge.naverncp.com%2Ffiles%2Fcriminalmhs%2F202507%2Ffffbec7c7fc9a06e84210f84e37366dc.jpg%26mcode%3D1112&type=m&w=1980&h=1980&ttype=png" 
+                  src="https://res.cloudinary.com/dxjz9ksjg/image/upload/v1774346422/ChatGPT_Image_2026%EB%85%84_3%EC%9B%94_1%EC%9D%BC_%EC%98%A4%ED%9B%84_10_34_52_ydee1z.png" 
                   alt="윤영준 원장" 
                   className="w-full aspect-square lg:aspect-[3/4] object-cover"
                   referrerPolicy="no-referrer"
@@ -5972,7 +5972,7 @@ const AboutPage = ({ title, slug }: { title: string; slug: string }) => {
                 { 
                   name: "윤영준 원장", 
                   role: "상담학 박사 / 국제 임상최면치료사", 
-                  image: "https://tpqens1j9138.edge.naverncp.com/MNiExO50AC?src=https%3A%2F%2Fpage24.app%2Fapi%2Ffile%2FmodooImgPasre%3FsiteId%3Dcriminalmhs%26image_url%3Dhttps%3A%2F%2F9tsiiw6i9140.edge.naverncp.com%2Ffiles%2Fcriminalmhs%2F202507%2Ffffbec7c7fc9a06e84210f84e37366dc.jpg%26mcode%3D1112&type=m&w=1980&h=1980&ttype=png",
+                  image: "https://res.cloudinary.com/dxjz9ksjg/image/upload/v1774346422/ChatGPT_Image_2026%EB%85%84_3%EC%9B%94_1%EC%9D%BC_%EC%98%A4%ED%9B%84_10_34_52_ydee1z.png",
                   desc: "성범죄 상담 경력 10년 이상, 법원 촉탁 상담위원 역임."
                 },
                 { 
