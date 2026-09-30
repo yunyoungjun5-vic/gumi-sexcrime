@@ -57,6 +57,7 @@ import { Link } from 'react-router-dom';
 import PartnerTeaser from '../components/PartnerTeaser';
 import MediaAppearanceTeaser from '../components/MediaAppearanceTeaser';
 import BroadcastMarquee from '../components/BroadcastMarquee';
+import LandingPopup from '../components/LandingPopup';
 import { NAV_STRUCTURE } from '../App';
 
 const NAVER_PLACE_URL = "https://map.naver.com/p/entry/place/2045593340?c=15.00,0,0,0,dh&placePath=%2Fticket%3Ffrom%3Dmap%26fromPanelNum%3D1%26additionalHeight%3D76%26timestamp%3D202606261655%26locale%3Dko%26svcName%3Dmap_pcv5%26entry%3Dbmp";
@@ -69,6 +70,9 @@ const LogoIcon = ({ className }: { className?: string }) => (
 const DentistryLandingPage: React.FC = () => {
   return (
     <div style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }} className="antialiased selection:bg-emerald-200 selection:text-emerald-900 bg-slate-50 text-slate-600">
+      {/* Landing Page Popup */}
+      <LandingPopup reservationUrl={NAVER_PLACE_URL} />
+
       {/* 0. TOP BAR (Moved to Hero boundary) */}
       <div className="bg-emerald-950 text-emerald-50 text-xs font-medium py-2.5 px-4 border-b border-emerald-900 shadow-lg relative z-20">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2 text-center sm:text-left">
