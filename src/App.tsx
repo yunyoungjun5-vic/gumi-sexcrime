@@ -6057,16 +6057,9 @@ const AboutPage = ({ title, slug }: { title: string; slug: string }) => {
               ))}
             </div>
 
-            {/* 4행: 상담 전문가 (3열: 이희철, 유보경, 윤송이) */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-16">
+            {/* 4행: 상담 전문가 (2열: 유보경, 윤송이) */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16 max-w-4xl mx-auto">
               {[
-                { 
-                  name: "이희철 교수", 
-                  role: "심리학 박사 / 임상심리 전문가", 
-                  image: "https://res.cloudinary.com/dxjz9ksjg/image/upload/v1779201660/%EC%9D%B4%ED%9D%AC%EC%B2%A0_%EA%B5%90%EC%88%98_1_lvwzev.png",
-                  desc: "성범죄 가해자 인지왜곡 교정 및 상담 프로그램 연구.",
-                  imgClass: "object-top"
-                },
                 { 
                   name: "유보경 선생님", 
                   role: "상담심리 전문가 / 성인지 교육 강사", 
