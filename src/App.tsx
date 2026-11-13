@@ -871,7 +871,6 @@ const Footer = () => (
               <span className="font-black">{CONTACT_PHONE}</span>
             </div>
             <div className="text-slate-300 text-[13px] font-bold leading-relaxed space-y-1">
-              <p>사업자 번호 : 437-93-02099</p>
               <p>대표자 : 윤영준</p>
             </div>
           </div>
@@ -920,7 +919,7 @@ const Footer = () => (
           <a href="#" className="hover:text-white">Cookie Policy</a>
         </div>
         <p className="text-slate-400 text-xs font-bold">
-          © 2026 구미성범죄심리상담치료센터. All rights reserved.
+          © 구미성범죄심리상담치료센터. All rights reserved.
         </p>
       </div>
     </div>
@@ -5550,6 +5549,8 @@ const MediaActivityPage = () => {
 };
 
 const AboutPage = ({ title, slug }: { title: string; slug: string }) => {
+  const [selectedExpertModal, setSelectedExpertModal] = useState<any | null>(null);
+
   if (slug === 'notice') {
     return <NoticePage />;
   }
@@ -5962,7 +5963,7 @@ const AboutPage = ({ title, slug }: { title: string; slug: string }) => {
       {slug === 'experts' && (
         <div className="space-y-16">
           <div className="text-center max-w-2xl mx-auto">
-            <h2 className="text-3xl font-bold text-slate-900 mb-4">성범죄 특화 전문가 그룹</h2>
+            <h2 className="text-3xl font-bold text-slate-900 mb-4">성범죄 특화 전문가 및 자문위원</h2>
             <p className="text-slate-500">단순 심리상담사가 아닌, 구조적 개입과 행동 교정의 전문가들이 함께합니다.</p>
           </div>
           <div className="space-y-32">
@@ -5973,21 +5974,39 @@ const AboutPage = ({ title, slug }: { title: string; slug: string }) => {
                   name: "윤영준 원장", 
                   role: "상담학 박사 / 국제 임상최면치료사", 
                   image: "https://res.cloudinary.com/dxjz9ksjg/image/upload/v1774346422/ChatGPT_Image_2026%EB%85%84_3%EC%9B%94_1%EC%9D%BC_%EC%98%A4%ED%9B%84_10_34_52_ydee1z.png",
-                  desc: "성범죄 상담 경력 10년 이상, 법원 촉탁 상담위원 역임."
+                  desc: "성범죄 상담 경력 25년 이상, 법원 촉탁 상담위원 역임.",
+                  link: "/about/profile"
                 },
                 { 
                   name: "소윤주 부원장", 
                   role: "기능의학 / 최면 / 성상담 전문가", 
                   image: "https://res.cloudinary.com/dxjz9ksjg/image/upload/v1774347139/KakaoTalk_20240521_123825759_gslvpg.jpg",
                   desc: "기능의학 기반의 심신 통합 치유 전문가.",
-                  imgClass: "object-top"
+                  imgClass: "object-top",
+                  link: "/about/vice-profile"
                 }
               ].map((expert, idx) => (
                 <div key={idx} className="text-center group">
-                  <div className="w-48 h-48 rounded-full overflow-hidden mx-auto mb-6 shadow-xl group-hover:scale-105 transition-transform duration-500">
+                  <Link 
+                    to={expert.link}
+                    className="block w-48 h-48 rounded-full overflow-hidden mx-auto mb-6 shadow-xl group-hover:scale-105 transition-transform duration-500 cursor-pointer ring-4 ring-emerald-500/20 hover:ring-emerald-500/50"
+                  >
                     <img src={expert.image} alt={expert.name} className={`w-full h-full object-cover ${expert.imgClass || ''}`} referrerPolicy="no-referrer" />
-                  </div>
-                  <h3 className="text-xl font-black text-slate-900 mb-1 font-display">{expert.name}</h3>
+                  </Link>
+                  <h3 className="text-xl font-black text-slate-900 mb-1 font-display flex items-center justify-center gap-1.5">
+                    <Link 
+                      to={expert.link}
+                      className="hover:text-emerald-600 transition-colors cursor-pointer"
+                    >
+                      {expert.name}
+                    </Link>
+                    <Link 
+                      to={expert.link}
+                      className="text-[11px] font-bold px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-600 border border-emerald-200 hover:bg-emerald-100 transition-colors"
+                    >
+                      프로필 보기
+                    </Link>
+                  </h3>
                   <p className="text-sm text-emerald-600 font-bold mb-4 font-display">{expert.role}</p>
                   <p className="text-xs text-slate-500 leading-relaxed px-8 font-bold">{expert.desc}</p>
                 </div>
@@ -6002,84 +6021,390 @@ const AboutPage = ({ title, slug }: { title: string; slug: string }) => {
                   role: "법무법인 소울 변호사 / 성범죄 전문 변호사", 
                   image: "https://res.cloudinary.com/dxjz9ksjg/image/upload/v1774346463/member_view23_nnxzhn.jpg",
                   desc: "현재 법무법인 소울 변호사. 창원지방법원 조정위원, 창원지방검찰청 형사조정위원, 대한법률구조공단 구조위원 역임.",
-                  imgClass: "object-top"
+                  imgClass: "object-top",
+                  hasDetail: true,
+                  details: {
+                    name: "허선무 변호사",
+                    role: "법무법인 소울 변호사 / 성범죄 전문 변호사",
+                    image: "https://res.cloudinary.com/dxjz9ksjg/image/upload/v1774346463/member_view23_nnxzhn.jpg",
+                    bio: [
+                      "사법연수원 44기 수료",
+                      "창원지방법원 민사조정위원",
+                      "창원지방검찰청 검사직무대리",
+                      "창원지방법원 국선변호인",
+                      "대한법률구조공단 창원지부 구조위원",
+                      "김해중부경찰서 수사민원상담센터 상담변호사",
+                      "경남 농아인협회 창원지회 자문위원",
+                      "창원지방검찰청 형사조정위원",
+                      "이혼·상속 전문변호사 등록",
+                      "법무법인 소울 변호사"
+                    ]
+                  }
                 },
                 { 
                   name: "강주오 변호사", 
                   role: "법무법인 로하스 대표변호사", 
                   image: "https://res.cloudinary.com/dxjz9ksjg/image/upload/v1776971476/73290c9b-6542-4f47-9ea0-ec8be1861807_plqybw.png",
-                  desc: "경북도청 및 구미시 법률상담관, 구미시의회 고문변호사."
+                  desc: "경북도청 및 구미시 법률상담관, 구미시의회 고문변호사.",
+                  hasDetail: true,
+                  details: {
+                    name: "강주오 대표 변호사",
+                    role: "법무법인 로하스 대표변호사",
+                    image: "https://res.cloudinary.com/dxjz9ksjg/image/upload/v1776971476/73290c9b-6542-4f47-9ea0-ec8be1861807_plqybw.png",
+                    sections: [
+                      {
+                        title: "학력",
+                        items: [
+                          "대아고등학교 졸업",
+                          "성균관대학교 졸업 (행정학사, 경제학사)",
+                          "동아대학교 법학전문대학원 졸업"
+                        ]
+                      },
+                      {
+                        title: "경력",
+                        items: [
+                          "現 법무법인 로하스 대표변호사",
+                          "現 법무부 창조경제혁신센터 법률지원단 자문 변호사",
+                          "現 법무부 남북하나재단 북한이탈주민 지원 변호인",
+                          "現 경북하나센터, 대구하나센터 고문변호사",
+                          "現 삼성연합의원 탑/예스정형외과의원 등 다수 병원 자문",
+                          "現 옥계아동병원 자문",
+                          "現 칠곡북삼 지역주택 조합 고문 변호사",
+                          "現 삼성전자 주식회사 자문변호사",
+                          "現 경북지방노동위원회 권리구제대리인",
+                          "現 국가권익위원회 비실명대리신고 자문변호사",
+                          "現 중소벤처기업부 불공정거래 신고센터 법률전문위원",
+                          "現 경북도청 법률상담관, 보건복지부 산하 행복재단 감사",
+                          "現 구미시 법률 상담관",
+                          "現 구미시의회 고문변호사",
+                          "現 구미교육청 학폭심의위원회 위원장",
+                          "現 대구지방 가정법원 김천지원 민사/가사 조정위원회 부회장",
+                          "現 구미경찰서 법률상담변호사, 경미범죄심사위원, 여성청소년 지도위원, 아동학대예방 자문의원",
+                          "現 법무부 법사랑 위원",
+                          "現 경북경찰청 청원심의위원회 위원",
+                          "現 경북경찰청 보통징계위원회 위원",
+                          "現 금오공과대학교 보통징계위원회 위원",
+                          "現 구미 인동농협/산동농협 상담 변호사",
+                          "前 법무법인 정인(正人)",
+                          "前 삼성전자 주식회사 인사팀",
+                          "前 강동 종합법률사무소 대표변호사"
+                        ]
+                      }
+                    ]
+                  }
                 },
                 { 
                   name: "백진욱 변호사", 
                   role: "법무법인 로하스 변호사", 
                   image: "https://res.cloudinary.com/dxjz9ksjg/image/upload/v1777026382/bfb4a67d-9cf5-410b-9338-7f76ed3b73b9-md_qycut4.jpg",
                   desc: "성범죄 및 형사 사건 전문 법률 조력자.",
-                  imgClass: "object-top"
+                  imgClass: "object-top",
+                  hasDetail: true,
+                  details: {
+                    name: "백진욱 변호사",
+                    role: "법무법인 로하스 변호사",
+                    image: "https://res.cloudinary.com/dxjz9ksjg/image/upload/v1777026382/bfb4a67d-9cf5-410b-9338-7f76ed3b73b9-md_qycut4.jpg",
+                    sections: [
+                      {
+                        title: "학력",
+                        items: [
+                          "고려대학교 사회/행정학 전공",
+                          "경북대학교 법학전문대학원 졸업"
+                        ]
+                      },
+                      {
+                        title: "경력",
+                        items: [
+                          "現 법무법인 로하스 변호사",
+                          "前 한국부동산원 변호사"
+                        ]
+                      }
+                    ]
+                  }
                 }
               ].map((expert, idx) => (
                 <div key={idx} className="text-center group">
-                  <div className="w-48 h-48 rounded-full overflow-hidden mx-auto mb-6 shadow-xl group-hover:scale-105 transition-transform duration-500">
+                  <div 
+                    onClick={() => expert.hasDetail && setSelectedExpertModal(expert.details)}
+                    className={`w-48 h-48 rounded-full overflow-hidden mx-auto mb-6 shadow-xl group-hover:scale-105 transition-transform duration-500 ${expert.hasDetail ? 'cursor-pointer ring-4 ring-emerald-500/20 hover:ring-emerald-500/50' : ''}`}
+                  >
                     <img src={expert.image} alt={expert.name} className={`w-full h-full object-cover ${expert.imgClass || ''}`} referrerPolicy="no-referrer" />
                   </div>
-                  <h3 className="text-xl font-black text-slate-900 mb-1 font-display">{expert.name}</h3>
+                  <h3 
+                    onClick={() => expert.hasDetail && setSelectedExpertModal(expert.details)}
+                    className={`text-xl font-black text-slate-900 mb-1 font-display flex items-center justify-center gap-1.5 ${expert.hasDetail ? 'cursor-pointer hover:text-emerald-600 transition-colors' : ''}`}
+                  >
+                    <span>{expert.name}</span>
+                    {expert.hasDetail && (
+                      <span className="text-[11px] font-bold px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-600 border border-emerald-200">
+                        프로필 보기
+                      </span>
+                    )}
+                  </h3>
                   <p className="text-sm text-emerald-600 font-bold mb-4 font-display">{expert.role}</p>
                   <p className="text-xs text-slate-500 leading-relaxed px-8 font-bold">{expert.desc}</p>
                 </div>
               ))}
             </div>
 
-            <div className="flex flex-wrap justify-center gap-x-8 gap-y-16">
+            {/* 3행: 상담 전문가 (3열: 문영애, 임진수, 이제승) */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-16">
               {[
                 { 
                   name: "문영애 교수", 
                   role: "상담심리학 박사 / 한국신체심리치료 연구소 대표", 
                   image: "https://res.cloudinary.com/dxjz9ksjg/image/upload/v1779201676/%EB%AC%B8%EC%98%81%EC%95%A0_%EA%B5%90%EC%88%981_q9eo9t.png",
                   desc: "PhD 상담심리학 박사, 훨든크라이스 전문가.",
-                  imgClass: "object-top"
+                  imgClass: "object-top",
+                  hasDetail: true,
+                  details: {
+                    name: "문영애 교수",
+                    role: "상담심리학 박사 / 한국신체심리치료 연구소 대표",
+                    image: "https://res.cloudinary.com/dxjz9ksjg/image/upload/v1779201676/%EB%AC%B8%EC%98%81%EC%95%A0_%EA%B5%90%EC%88%981_q9eo9t.png",
+                    sections: [
+                      {
+                        title: "학력 및 전문 분야",
+                        items: [
+                          "상담심리학 박사",
+                          "자아초월상담학 박사",
+                          "성균관대학교 체육학 박사과정 이수",
+                          "전문 분야: 움직임 치료 · 꿈치료 · 코칭"
+                        ]
+                      },
+                      {
+                        title: "경력 및 주요 활동",
+                        items: [
+                          "휠든크라이스 수퍼바이저",
+                          "상담코치협회 이사",
+                          "자기치유 관련 저서 공저",
+                          "방송 특강, 움직임 치료, 꿈치료, 기업 강의 및 코칭"
+                        ]
+                      }
+                    ]
+                  }
+                },
+                { 
+                  name: "임진수 박사", 
+                  role: "정신분석학 박사 / 프로이트 라캉 학회 정신분석가", 
+                  image: "https://res.cloudinary.com/dxjz9ksjg/image/upload/v1793856802/1446168883094_ofcded.jpg",
+                  desc: "서울대 박사, 파리 VIII대 정신분석학 DEA, 프로이트 라캉 학회 정신분석가.",
+                  imgClass: "object-top",
+                  hasDetail: true,
+                  details: {
+                    name: "임진수 박사",
+                    role: "정신분석학 박사 / 프로이트 라캉 학회 정신분석가",
+                    image: "https://res.cloudinary.com/dxjz9ksjg/image/upload/v1793856802/1446168883094_ofcded.jpg",
+                    bio: [
+                      "서울대학교 불어교육과를 졸업, 동 대학원 박사학위.",
+                      "계명대학교 유럽학과 교수 역임",
+                      "프랑스 파리 VIII 대학 정신분석학과에서 DEA를 취득, 박사과정을 수료.",
+                      "1995년부터 2003년까지 파리 고등사회과학원(E.H.E.S.S.) 교수인 프랑수아즈 다부안느(Françoise Davoine)에게 교육 분석을 받고, 2002년부터 '프로이트 라캉 학회'를 개설하고 정신분석가로 활동 중."
+                    ],
+                    books: [
+                      "『정신분석 세미나 IV: 환상의 정신분석』",
+                      "『정신분석 세미나 Ⅴ: 남근의 의미작용』",
+                      "『정신분석 세미나 IX: 네 가지 담화』",
+                      "『정신분석 세미나 XI: 위상학적 정신분석』 등 정신분석 세미나 총서 16권"
+                    ],
+                    translations: [
+                      "『정신분석사전』(라플랑슈, 퐁탈리스)",
+                      "『정신분석의 탄생』(프로이트)",
+                      "『끝이 있는 분석과 끝이 없는 분석』(프로이트) 등"
+                    ],
+                    upcoming: [
+                      "『신경증의 병인』",
+                      "『정신분석적 정신치료』",
+                      "『세미나 X : 불안』",
+                      "『세미나 XX : 앙코르』"
+                    ]
+                  }
                 },
                 { 
                   name: "이제승 교수", 
                   role: "IMC 국제마음치유연구원 원장 / 심리상담학과 교수", 
                   image: "https://res.cloudinary.com/dxjz9ksjg/image/upload/v1779153823/%EC%9D%B4%EC%A0%9C%EC%8A%B9_%EA%B5%90%EC%88%98_gkluyp.jpg",
                   desc: "국제기독대학교 교수, 한국심리상담전문학회 학회장.",
-                  imgClass: "object-top"
+                  imgClass: "object-top",
+                  hasDetail: true,
+                  details: {
+                    name: "이제승 교수",
+                    role: "IMC 국제마음치유연구원 원장 / 심리상담학과 교수",
+                    image: "https://res.cloudinary.com/dxjz9ksjg/image/upload/v1779153823/%EC%9D%B4%EC%A0%9C%EC%8A%B9_%EA%B5%90%EC%88%98_gkluyp.jpg",
+                    bio: [
+                      "IMC 국제마음치유연구원 원장",
+                      "국제기독대학교 심리상담학과 교수",
+                      "한국심리상담전문학회 학회장"
+                    ]
+                  }
                 }
               ].map((expert, idx) => (
-                <div key={idx} className="w-full md:w-[calc(33.33%-2rem)] text-center group">
-                  <div className="w-48 h-48 rounded-full overflow-hidden mx-auto mb-6 shadow-xl group-hover:scale-105 transition-transform duration-500">
+                <div key={idx} className="text-center group">
+                  <div 
+                    onClick={() => expert.hasDetail && setSelectedExpertModal(expert.details)}
+                    className={`w-48 h-48 rounded-full overflow-hidden mx-auto mb-6 shadow-xl group-hover:scale-105 transition-transform duration-500 ${expert.hasDetail ? 'cursor-pointer ring-4 ring-emerald-500/20 hover:ring-emerald-500/50' : ''}`}
+                  >
                     <img src={expert.image} alt={expert.name} className={`w-full h-full object-cover ${expert.imgClass || ''}`} referrerPolicy="no-referrer" />
                   </div>
-                  <h3 className="text-xl font-black text-slate-900 mb-1 font-display">{expert.name}</h3>
+                  <h3 
+                    onClick={() => expert.hasDetail && setSelectedExpertModal(expert.details)}
+                    className={`text-xl font-black text-slate-900 mb-1 font-display flex items-center justify-center gap-1.5 ${expert.hasDetail ? 'cursor-pointer hover:text-emerald-600 transition-colors' : ''}`}
+                  >
+                    <span>{expert.name}</span>
+                    {expert.hasDetail && (
+                      <span className="text-[11px] font-bold px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-600 border border-emerald-200">
+                        프로필 보기
+                      </span>
+                    )}
+                  </h3>
                   <p className="text-sm text-emerald-600 font-bold mb-4 font-display">{expert.role}</p>
                   <p className="text-xs text-slate-500 leading-relaxed px-8 font-bold">{expert.desc}</p>
                 </div>
               ))}
             </div>
 
-            {/* 4행: 상담 전문가 (2열: 유보경, 윤송이) */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16 max-w-4xl mx-auto">
+            {/* 4행: 상담 전문가 (3열: 유보경, 함종수, 윤송이) */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-16">
               {[
                 { 
                   name: "유보경 선생님", 
                   role: "상담심리 전문가 / 성인지 교육 강사", 
                   image: "https://res.cloudinary.com/dxjz9ksjg/image/upload/v1779201666/%EC%9C%A0%EB%B3%B4%EA%B2%BD_%EC%84%A0%EC%83%9D%EB%8B%98_2_lobfoq.png",
                   desc: "성범죄 예방 및 재발 방지를 위한 심리 교육 전문가.",
-                  imgClass: "object-top"
+                  imgClass: "object-top",
+                  hasDetail: true,
+                  details: {
+                    name: "유보경 선생님",
+                    role: "상담심리 전문가 / 성인지 교육 강사",
+                    image: "https://res.cloudinary.com/dxjz9ksjg/image/upload/v1779201666/%EC%9C%A0%EB%B3%B4%EA%B2%BD_%EC%84%A0%EC%83%9D%EB%8B%98_2_lobfoq.png",
+                    sections: [
+                      {
+                        title: "학력 및 교육 이수",
+                        items: [
+                          "경북대학교대학원 아동복지과 전공 석사",
+                          "경북대학교대학원 아동가족학 전공 박사과정",
+                          "장애아보육도우미교육",
+                          "특별직무교육과정 (장애아보육과정, 방과후교육과정)",
+                          "장애아 보육시설 교사교육 (장애유형에 대한 이해 및 지도방법, IEP 함께 작성하기)",
+                          "2011년 보육시설 평가인증 참여설명회 및 지도교육",
+                          "자원개발을 위한 프로포절 핵심기법",
+                          "장애아어린이집 교사교육 (장애 영유아 부모의 이해와 지원방법)",
+                          "이고그램 전문강사 과정",
+                          "덴버(6개월), 베일리검사(12, 24, 36개월), 코오트 전문검사요원"
+                        ]
+                      },
+                      {
+                        title: "자격 및 인증",
+                        items: [
+                          "보육교사 1급, 평생교육사 2급, 사회복지사 2급, 요양보호사 1급",
+                          "심리상담사 1급, 발달진단평가 2급, 미술치료사 1급",
+                          "NLP프랙티셔너, 최면심리상담사 2급",
+                          "한국심리학회 정회원, 임상코디네이터",
+                          "어린이문학교육학회 정회원"
+                        ]
+                      },
+                      {
+                        title: "주요 경력 및 수상",
+                        items: [
+                          "장애전담 어린이집 근무",
+                          "장애인복지관 가족소통프로그램 진행",
+                          "노인복지관, 요양원 집단상담, 미술치료",
+                          "삼성팰리스, MBC생방송 오늘의 아침, 연합뉴스 등 다수 출연",
+                          "순천향대학병원 · 대구가톨릭대학병원 연구원",
+                          "발로 뛰는 희망천사 에세이 '최우수상'",
+                          "우수교사 해외연수 (전국 장애아동 보육시설협의회)",
+                          "사회복지인상 (사회복지협의회)"
+                        ]
+                      }
+                    ]
+                  }
+                },
+                { 
+                  name: "함종수 교수", 
+                  role: "철학박사 · 신학박사 · 심리학박사 / 미국상담심리치료학회(AACPT) 회장", 
+                  image: "https://res.cloudinary.com/dxjz9ksjg/image/upload/v1793856790/professor_wut7ut.png",
+                  desc: "미국상담심리치료학회(AACPT) 회장, 애리조나 주립대 철학교수 역임, LA 시장상 수상.",
+                  imgClass: "object-top",
+                  hasDetail: true,
+                  details: {
+                    name: "함종수 교수",
+                    role: "철학박사 · 신학박사 · 심리학박사 / 미국상담심리치료학회(AACPT) 회장",
+                    image: "https://res.cloudinary.com/dxjz9ksjg/image/upload/v1793856790/professor_wut7ut.png",
+                    bio: [
+                      "미국상담심리치료학회(AACPT) 회장",
+                      "미국장로교총회(GAPC) 목사",
+                      "미국 애리조나 주립대학교 철학교수 역임",
+                      "미국 LA 시장상 수상",
+                      "철학박사 (Ph.D.)",
+                      "신학박사 (Th.D.)",
+                      "심리학박사 (Psy.D.)"
+                    ]
+                  }
                 },
                 { 
                   name: "윤송이 선생님", 
                   role: "심리상담 전문가 / 성폭력 예방 교육 강사", 
                   image: "https://res.cloudinary.com/dxjz9ksjg/image/upload/v1779201655/%EC%9C%A4%EC%86%A1%EC%9D%B4_%EC%84%A0%EC%83%9D%EB%8B%98_2_q34upo.png",
-                  desc: "인지행동치료 기반의 성인지 감수성 향상 교육.",
-                  imgClass: "object-top"
+                  desc: "임상심리사 2급(국가자격증), 인지행동치료 기반의 성인지 감수성 향상 교육.",
+                  imgClass: "object-top",
+                  hasDetail: true,
+                  details: {
+                    name: "윤송이 선생님",
+                    role: "심리상담 전문가 / 성폭력 예방 교육 강사",
+                    image: "https://res.cloudinary.com/dxjz9ksjg/image/upload/v1779201655/%EC%9C%A4%EC%86%A1%EC%9D%B4_%EC%84%A0%EC%83%9D%EB%8B%98_2_q34upo.png",
+                    sections: [
+                      {
+                        title: "학력 및 교육 이수",
+                        items: [
+                          "경북대학교대학원 심리학 석사",
+                          "서불대 신심통합치유학과 뇌인지과학 박사수료",
+                          "위로상담가 수료"
+                        ]
+                      },
+                      {
+                        title: "자격 및 인증",
+                        items: [
+                          "청소년상담사 3급",
+                          "임상심리사 2급 (국가자격증)",
+                          "심리상담사 1급, 미술치료사 1급, 요가지도자 1급",
+                          "한국상담학회 준회원, NLP프랙티셔너"
+                        ]
+                      },
+                      {
+                        title: "주요 경력 및 강의 활동",
+                        items: [
+                          "의성군건강가정지원센터 부부 힐링 클리닉",
+                          "구미시장애인종합복지관 장애부모자녀 관계 조정",
+                          "구미경찰서 전의경 상담",
+                          "기업 ㈜성진포머 직원지원프로그램(직원심리상담) 현 진행",
+                          "MBC 생방송 오늘의 아침 외 다수 출연",
+                          "대구노인종합복지관 황혼육아 양육코칭 강의",
+                          "대구 성서경찰서 기동대 폭력의 이해, 수치심/죄책감/열등감 강의",
+                          "대구장애인가족지원센터 동료상담가 실습진행",
+                          "대룡초등학교, 운암중학교, 의흥초등학교 집단상담"
+                        ]
+                      }
+                    ]
+                  }
                 }
               ].map((expert, idx) => (
                 <div key={idx} className="text-center group">
-                  <div className="w-48 h-48 rounded-full overflow-hidden mx-auto mb-6 shadow-xl group-hover:scale-105 transition-transform duration-500">
+                  <div 
+                    onClick={() => expert.hasDetail && setSelectedExpertModal(expert.details)}
+                    className={`w-48 h-48 rounded-full overflow-hidden mx-auto mb-6 shadow-xl group-hover:scale-105 transition-transform duration-500 ${expert.hasDetail ? 'cursor-pointer ring-4 ring-emerald-500/20 hover:ring-emerald-500/50' : ''}`}
+                  >
                     <img src={expert.image} alt={expert.name} className={`w-full h-full object-cover ${expert.imgClass || ''}`} referrerPolicy="no-referrer" />
                   </div>
-                  <h3 className="text-xl font-black text-slate-900 mb-1 font-display">{expert.name}</h3>
+                  <h3 
+                    onClick={() => expert.hasDetail && setSelectedExpertModal(expert.details)}
+                    className={`text-xl font-black text-slate-900 mb-1 font-display flex items-center justify-center gap-1.5 ${expert.hasDetail ? 'cursor-pointer hover:text-emerald-600 transition-colors' : ''}`}
+                  >
+                    <span>{expert.name}</span>
+                    {expert.hasDetail && (
+                      <span className="text-[11px] font-bold px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-600 border border-emerald-200">
+                        프로필 보기
+                      </span>
+                    )}
+                  </h3>
                   <p className="text-sm text-emerald-600 font-bold mb-4 font-display">{expert.role}</p>
                   <p className="text-xs text-slate-500 leading-relaxed px-8 font-bold">{expert.desc}</p>
                 </div>
@@ -6094,28 +6419,150 @@ const AboutPage = ({ title, slug }: { title: string; slug: string }) => {
                   role: "상담심리 전문가 / 중독 상담사 /성상담 전문가", 
                   image: "https://res.cloudinary.com/dxjz9ksjg/image/upload/v1779198673/%EC%A0%84%EA%B2%BD%EC%88%99_%EC%84%A0%EC%83%9D%EB%8B%98_hctbka.png",
                   desc: "성인지 왜곡 및 중독 문제 해결을 위한 전문 심리 상담.",
-                  imgClass: "object-top"
+                  imgClass: "object-top",
+                  hasDetail: true,
+                  details: {
+                    name: "전경숙 선생님",
+                    role: "한국뇌기반심리상담 대표 / 상담심리 전문가",
+                    image: "https://res.cloudinary.com/dxjz9ksjg/image/upload/v1779198673/%EC%A0%84%EA%B2%BD%EC%88%99_%EC%84%A0%EC%83%9D%EB%8B%98_hctbka.png",
+                    sections: [
+                      {
+                        title: "학력",
+                        items: [
+                          "자아초월상담심리학 석사",
+                          "명상학 이수",
+                          "뇌인지 박사 수료",
+                          "International Christian College HONRARY DOCTER EDUCATION (Ed.D) 교육학명예박사"
+                        ]
+                      },
+                      {
+                        title: "주요 경력",
+                        items: [
+                          "한국뇌기반심리상담 대표",
+                          "교육분야 20년 · 청소년 진로 및 발달상담",
+                          "조장희 박사님과 뇌과학문화운동 대표",
+                          "한국상담학회 회원",
+                          "아봐타 / 마스터"
+                        ]
+                      },
+                      {
+                        title: "활동 이력",
+                        items: [
+                          "2015년: 박문호 박사 뇌과학문화운동 8회차 진행",
+                          "2016년~2021년: 조장희 박사 썸머 진행",
+                          "2019년~2021년: 서초문화원 명상강의",
+                          "2022년: 인천지역 학교상담교사 교육"
+                        ]
+                      },
+                      {
+                        title: "강의 및 프로그램",
+                        items: [
+                          "뇌상담사 양성과정 강의",
+                          "코칭프로그램 진행",
+                          "기아, 현대자동차 프로그램 진행",
+                          "코오롱기업연수 프로그램 진행",
+                          "NAVER 꿈분석 전문상담",
+                          "NAVER 명상상담"
+                        ]
+                      },
+                      {
+                        title: "자격",
+                        items: [
+                          "뇌상담사",
+                          "진로상담사",
+                          "명상상담"
+                        ]
+                      }
+                    ]
+                  }
                 },
                 { 
                   name: "박경실 선생님", 
                   role: "상담심리 전문가 / 청소년 상담사", 
                   image: "https://res.cloudinary.com/dxjz9ksjg/image/upload/v1779201657/%EB%B0%95%EA%B2%BD%EC%8B%A4_%EC%84%A0%EC%83%9D%EB%8B%98_1_k3bg6h.png",
-                  desc: "청소년 및 성인 내담자의 심리적 안정과 긍정적 변화 지원.",
-                  imgClass: "object-top"
+                  desc: "임상심리사 1급(국가자격증), 청소년 및 성인 내담자의 심리적 안정과 긍정적 변화 지원.",
+                  imgClass: "object-top",
+                  hasDetail: true,
+                  details: {
+                    name: "박경실 선생님",
+                    role: "상담심리 전문가 / 청소년 상담사",
+                    image: "https://res.cloudinary.com/dxjz9ksjg/image/upload/v1779201657/%EB%B0%95%EA%B2%BD%EC%8B%A4_%EC%84%A0%EC%83%9D%EB%8B%98_1_k3bg6h.png",
+                    sections: [
+                      {
+                        title: "학력",
+                        items: [
+                          "최면상담학 박사",
+                          "심리상담학 석사"
+                        ]
+                      },
+                      {
+                        title: "자격 및 경력",
+                        items: [
+                          "임상심리사 1급",
+                          "사회복지사 1급",
+                          "청소년상담사 2급",
+                          "병영생활전문상담관",
+                          "어세스타",
+                          "서울시동부교육청 청소년상담센터"
+                        ]
+                      }
+                    ]
+                  }
                 },
                 { 
                   name: "강민경 선생님", 
                   role: "상담심리 전문가 / 가족학 석사 / 부모, 가족 교육 강사", 
                   image: "https://res.cloudinary.com/dxjz9ksjg/image/upload/v1779198673/%EA%B0%95%EB%AF%BC%EA%B2%BD_%EC%84%A0%EC%83%9D%EB%8B%98_2_bganyn.bmp",
                   desc: "심리 정서적 지지를 통한 자존감 회복 및 재발 방지 상담.",
-                  imgClass: "object-top"
+                  imgClass: "object-top scale-110 translate-x-2.5",
+                  hasDetail: true,
+                  details: {
+                    name: "강민경 선생님",
+                    role: "상담심리 전문가 / 가족학 석사 / 부모, 가족 교육 강사",
+                    image: "https://res.cloudinary.com/dxjz9ksjg/image/upload/v1779198673/%EA%B0%95%EB%AF%BC%EA%B2%BD_%EC%84%A0%EC%83%9D%EB%8B%98_2_bganyn.bmp",
+                    imgClass: "object-top scale-110 translate-x-2",
+                    sections: [
+                      {
+                        title: "학력",
+                        items: [
+                          "가족학 석사",
+                          "미술치료 석사",
+                          "뇌인지 박사"
+                        ]
+                      },
+                      {
+                        title: "주요 경력 및 자격",
+                        items: [
+                          "이든아이아동발달센터 부원장",
+                          "미술치료상담원",
+                          "한국아동발달지원연구소",
+                          "뇌교육사",
+                          "임상미술상담사",
+                          "진로상담사"
+                        ]
+                      }
+                    ]
+                  }
                 }
               ].map((expert, idx) => (
                 <div key={idx} className="text-center group">
-                  <div className="w-48 h-48 rounded-full overflow-hidden mx-auto mb-6 shadow-xl bg-slate-50 group-hover:scale-105 transition-transform duration-500">
+                  <div 
+                    onClick={() => expert.hasDetail && setSelectedExpertModal(expert.details)}
+                    className={`w-48 h-48 rounded-full overflow-hidden mx-auto mb-6 shadow-xl bg-slate-50 group-hover:scale-105 transition-transform duration-500 ${expert.hasDetail ? 'cursor-pointer ring-4 ring-emerald-500/20 hover:ring-emerald-500/50' : ''}`}
+                  >
                     <img src={expert.image} alt={expert.name} className={`w-full h-full object-cover ${expert.imgClass || ''}`} referrerPolicy="no-referrer" />
                   </div>
-                  <h3 className="text-xl font-black text-slate-900 mb-1 font-display">{expert.name}</h3>
+                  <h3 
+                    onClick={() => expert.hasDetail && setSelectedExpertModal(expert.details)}
+                    className={`text-xl font-black text-slate-900 mb-1 font-display flex items-center justify-center gap-1.5 ${expert.hasDetail ? 'cursor-pointer hover:text-emerald-600 transition-colors' : ''}`}
+                  >
+                    <span>{expert.name}</span>
+                    {expert.hasDetail && (
+                      <span className="text-[11px] font-bold px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-600 border border-emerald-200">
+                        프로필 보기
+                      </span>
+                    )}
+                  </h3>
                   <p className="text-sm text-emerald-600 font-bold mb-4 font-display">{expert.role}</p>
                   <p className="text-xs text-slate-500 leading-relaxed px-8 font-bold">{expert.desc}</p>
                 </div>
@@ -6141,6 +6588,161 @@ const AboutPage = ({ title, slug }: { title: string; slug: string }) => {
               </Link>
             </div>
           </div>
+
+          {/* Expert Detailed Profile Modal */}
+          <AnimatePresence>
+            {selectedExpertModal && (
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/70 backdrop-blur-sm"
+                onClick={() => setSelectedExpertModal(null)}
+              >
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.95, y: 20 }}
+                  animate={{ opacity: 1, scale: 1, y: 0 }}
+                  exit={{ opacity: 0, scale: 0.95, y: 20 }}
+                  transition={{ duration: 0.2 }}
+                  onClick={(e) => e.stopPropagation()}
+                  className="bg-white rounded-3xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto border border-slate-100 p-6 sm:p-8 relative"
+                >
+                  <button
+                    onClick={() => setSelectedExpertModal(null)}
+                    className="absolute top-5 right-5 p-2 rounded-full text-slate-400 hover:text-slate-700 hover:bg-slate-100 transition-colors"
+                    aria-label="닫기"
+                  >
+                    <X className="w-6 h-6" />
+                  </button>
+
+                  <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6 pb-6 border-b border-slate-100">
+                    <div className="w-28 h-28 sm:w-32 sm:h-32 rounded-2xl overflow-hidden shadow-lg shrink-0">
+                      <img
+                        src={selectedExpertModal.image}
+                        alt={selectedExpertModal.name}
+                        className={`w-full h-full object-cover ${selectedExpertModal.imgClass || ''}`}
+                        referrerPolicy="no-referrer"
+                      />
+                    </div>
+                    <div className="text-center sm:text-left space-y-2">
+                      <div className="inline-block px-3 py-1 bg-emerald-50 text-emerald-700 text-xs font-bold rounded-full">
+                        전문가 상세 프로필
+                      </div>
+                      <h3 className="text-2xl font-black text-slate-900 font-display">
+                        {selectedExpertModal.name}
+                      </h3>
+                      <p className="text-sm font-bold text-emerald-600">
+                        {selectedExpertModal.role}
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="mt-6 space-y-6 text-sm text-slate-700 leading-relaxed font-bold">
+                    {/* 다중 섹션 (학력, 경력 등) 지원 */}
+                    {selectedExpertModal.sections ? (
+                      selectedExpertModal.sections.map((section: any, sIdx: number) => (
+                        <div key={sIdx}>
+                          <h4 className="text-base font-black text-slate-900 mb-3 flex items-center gap-2 font-display">
+                            <span className="w-1.5 h-4 bg-emerald-600 rounded-full"></span>
+                            {section.title}
+                          </h4>
+                          <ul className="space-y-2 bg-slate-50 p-4 rounded-2xl border border-slate-100 text-slate-600">
+                            {section.items?.map((item: string, i: number) => (
+                              <li key={i} className="flex items-start gap-2">
+                                <span className="text-emerald-600 shrink-0 mt-0.5">•</span>
+                                <span>{item}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      ))
+                    ) : (
+                      /* 기본 단일 약력 및 소개 */
+                      <div>
+                        <h4 className="text-base font-black text-slate-900 mb-3 flex items-center gap-2 font-display">
+                          <span className="w-1.5 h-4 bg-emerald-600 rounded-full"></span>
+                          약력 및 소개
+                        </h4>
+                        <ul className="space-y-2 bg-slate-50 p-4 rounded-2xl border border-slate-100 text-slate-600">
+                          {selectedExpertModal.bio?.map((item: string, i: number) => (
+                            <li key={i} className="flex items-start gap-2">
+                              <span className="text-emerald-600 shrink-0 mt-0.5">•</span>
+                              <span>{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+
+                    {/* 저서 */}
+                    {selectedExpertModal.books && (
+                      <div>
+                        <h4 className="text-base font-black text-slate-900 mb-3 flex items-center gap-2 font-display">
+                          <span className="w-1.5 h-4 bg-emerald-600 rounded-full"></span>
+                          주요 저서
+                        </h4>
+                        <div className="bg-slate-50 p-4 rounded-2xl border border-slate-100 text-slate-600 space-y-1.5">
+                          {selectedExpertModal.books.map((book: string, i: number) => (
+                            <p key={i} className="flex items-start gap-2">
+                              <span className="text-emerald-600 shrink-0">•</span>
+                              <span>{book}</span>
+                            </p>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+
+                    {/* 역서 */}
+                    {selectedExpertModal.translations && (
+                      <div>
+                        <h4 className="text-base font-black text-slate-900 mb-3 flex items-center gap-2 font-display">
+                          <span className="w-1.5 h-4 bg-emerald-600 rounded-full"></span>
+                          역서
+                        </h4>
+                        <div className="bg-slate-50 p-4 rounded-2xl border border-slate-100 text-slate-600 space-y-1.5">
+                          {selectedExpertModal.translations.map((trans: string, i: number) => (
+                            <p key={i} className="flex items-start gap-2">
+                              <span className="text-emerald-600 shrink-0">•</span>
+                              <span>{trans}</span>
+                            </p>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+
+                    {/* 발간 예정 */}
+                    {selectedExpertModal.upcoming && (
+                      <div>
+                        <h4 className="text-base font-black text-slate-900 mb-3 flex items-center gap-2 font-display">
+                          <span className="w-1.5 h-4 bg-emerald-600 rounded-full"></span>
+                          발간 예정
+                        </h4>
+                        <div className="bg-emerald-50/50 p-4 rounded-2xl border border-emerald-100 text-slate-700 flex flex-wrap gap-2">
+                          {selectedExpertModal.upcoming.map((item: string, i: number) => (
+                            <span
+                              key={i}
+                              className="px-3 py-1.5 bg-white rounded-xl shadow-xs border border-emerald-100 text-xs font-bold text-emerald-900"
+                            >
+                              {item}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+
+                  <div className="mt-8 pt-4 border-t border-slate-100 flex justify-end">
+                    <button
+                      onClick={() => setSelectedExpertModal(null)}
+                      className="px-6 py-2.5 bg-slate-900 text-white rounded-xl font-bold text-sm hover:bg-slate-800 transition-colors"
+                    >
+                      닫기
+                    </button>
+                  </div>
+                </motion.div>
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
       )}
 
