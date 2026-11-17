@@ -50,7 +50,7 @@ import {
   BusFront
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
-import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link, useLocation, useSearchParams } from 'react-router-dom';
 import PartnerTeaser from './components/PartnerTeaser';
 import MediaAppearanceTeaser from './components/MediaAppearanceTeaser';
 import PartnersPage from './pages/PartnersPage';
@@ -149,11 +149,11 @@ export const NAV_STRUCTURE: NavItem[] = [
 // --- Components ---
 
 const ScrollToTop = () => {
-  const { pathname } = useLocation();
+  const { pathname, search, key } = useLocation();
 
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, [pathname]);
+  }, [pathname, search, key]);
 
   return null;
 };
@@ -258,6 +258,10 @@ const Navbar = () => {
                         <Link 
                           key={child.title} 
                           to={child.href}
+                          onClick={() => {
+                            setActiveMenu(null);
+                            window.scrollTo(0, 0);
+                          }}
                           className="group p-3 rounded-xl hover:bg-slate-50 transition-all border border-transparent hover:border-slate-100"
                         >
                           <div className="text-[14px] font-bold text-slate-900 group-hover:text-emerald-600 mb-0.5">{child.title}</div>
@@ -316,6 +320,10 @@ const Navbar = () => {
                       <Link 
                         key={child.title} 
                         to={child.href}
+                        onClick={() => {
+                          setIsMobileMenuOpen(false);
+                          window.scrollTo(0, 0);
+                        }}
                         className="flex flex-col group"
                       >
                         <span className="text-lg font-bold text-slate-900 group-hover:text-primary-deep transition-colors">{child.title}</span>
@@ -847,7 +855,7 @@ const Footer = () => (
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
         <div className="col-span-1 lg:col-span-1">
           {/* 센터 이름 (강조된 제목) */}
-          <Link to="/" className="flex items-center gap-2 mb-8 relative z-10">
+          <Link to="/" onClick={() => window.scrollTo(0, 0)} className="flex items-center gap-2 mb-8 relative z-10">
             <Scale className="w-7 h-7 text-emerald-400" />
             <span className="text-xl font-black text-white tracking-tight font-display">구미성범죄심리상담치료센터</span>
           </Link>
@@ -953,7 +961,7 @@ const WorkplaceCaseContent = () => (
         </div>
         <div className="relative lg:col-span-1 max-w-sm mx-auto lg:mx-0">
           <img 
-            src="https://9tsiiw6i9140.edge.naverncp.com/files/sgrsoft/202603/8117b97c4f504f2544908af2745f2723.png" 
+            src="https://res.cloudinary.com/dxjz9ksjg/image/upload/v1774346329/ChatGPT_Image_2026%EB%85%84_3%EC%9B%94_3%EC%9D%BC_%EC%98%A4%ED%9B%84_08_16_41_yut2kc.png" 
             alt="Workplace Case Analysis" 
             className="rounded-[40px] shadow-2xl w-full grayscale-[0.2] hover:grayscale-0 transition-all duration-700"
             referrerPolicy="no-referrer"
@@ -1116,7 +1124,7 @@ const StalkingCaseContent = () => (
         </div>
         <div className="relative lg:col-span-1 max-w-sm mx-auto lg:mx-0">
           <img 
-            src="https://9tsiiw6i9140.edge.naverncp.com/files/sgrsoft/202603/3c964b98d9be3d76c9a43b274660a27e.png" 
+            src="https://res.cloudinary.com/dxjz9ksjg/image/upload/v1774346345/ChatGPT_Image_2026%EB%85%84_3%EC%9B%94_3%EC%9D%BC_%EC%98%A4%ED%9B%84_07_32_36_pvyiur.png" 
             alt="Stalking Case Analysis" 
             className="rounded-[40px] shadow-2xl w-full grayscale-[0.2] hover:grayscale-0 transition-all duration-700"
             referrerPolicy="no-referrer"
@@ -1274,7 +1282,7 @@ const JuvenileCaseContent = () => (
         </div>
         <div className="relative lg:col-span-1 max-w-sm mx-auto lg:mx-0">
           <img 
-            src="https://9tsiiw6i9140.edge.naverncp.com/files/sgrsoft/202603/5b23ae94a4d182dd2f6590a7e39c8e28.png" 
+            src="https://res.cloudinary.com/dxjz9ksjg/image/upload/v1774346347/ChatGPT_Image_2026%EB%85%84_3%EC%9B%94_3%EC%9D%BC_%EC%98%A4%ED%9B%84_07_14_08_pgier6.png" 
             alt="Juvenile Case Analysis" 
             className="rounded-[40px] shadow-2xl w-full grayscale-[0.2] hover:grayscale-0 transition-all duration-700"
             referrerPolicy="no-referrer"
@@ -1485,7 +1493,7 @@ const StatutoryRapeCaseContent = () => (
         <div className="relative">
           <div className="rounded-[48px] overflow-hidden shadow-2xl border-8 border-white aspect-[4/3] relative group">
             <img 
-              src="https://picsum.photos/seed/regret/800/600" 
+              src="https://res.cloudinary.com/dxjz9ksjg/image/upload/v1786091036/%EB%AF%B8%EC%84%B1%EB%85%84%EC%9E%90_%EC%9D%98%EC%A0%9C_%EA%B0%95%EA%B0%84_%EC%A0%84%EB%AC%B8_%EB%8C%80%EC%9D%91_hlwadm.png" 
               alt="Contemplating Man" 
               className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105"
               referrerPolicy="no-referrer"
@@ -1941,7 +1949,7 @@ const TongmaeumCaseContent = () => (
         </div>
         <div className="relative lg:col-span-1 max-w-sm mx-auto lg:mx-0">
           <img 
-            src="https://9tsiiw6i9140.edge.naverncp.com/files/sgrsoft/202603/f178f4a48cb6a50a5a1352119518e6e3.png" 
+            src="https://res.cloudinary.com/dxjz9ksjg/image/upload/v1774346348/ChatGPT_Image_2026%EB%85%84_3%EC%9B%94_3%EC%9D%BC_%EC%98%A4%ED%9B%84_06_56_55_cxvu5c.png" 
             alt="Tongmaeum Case Analysis" 
             className="rounded-[40px] shadow-2xl w-full grayscale-[0.2] hover:grayscale-0 transition-all duration-700"
             referrerPolicy="no-referrer"
@@ -2066,7 +2074,7 @@ const DeepfakeCaseContent = () => (
         </div>
         <div className="relative">
           <img 
-            src="https://9tsiiw6i9140.edge.naverncp.com/files/sgrsoft/202603/67d97b84c9f7063f52c317540fa1688a.png" 
+            src="https://res.cloudinary.com/dxjz9ksjg/image/upload/v1785746426/67d97b84c9f7063f52c317540fa1688a_mvk69s.png" 
             alt="Deepfake Case Analysis" 
             className="rounded-[40px] shadow-2xl w-full grayscale-[0.2] hover:grayscale-0 transition-all duration-700"
             referrerPolicy="no-referrer"
@@ -2194,7 +2202,7 @@ const FilmingCaseContent = () => (
         </div>
         <div className="relative">
           <img 
-            src="https://9tsiiw6i9140.edge.naverncp.com/files/sgrsoft/202603/a2e502646d4ab5610566f267760a51ca.png" 
+            src="https://res.cloudinary.com/dxjz9ksjg/image/upload/v1786088926/%EB%B6%88%EB%B2%95_%EC%B9%B4%EB%A9%94%EB%9D%BC%EC%B4%AC%EC%98%81_%EC%9C%A0%ED%8F%AC_%EC%A0%84%EB%AC%B8_%EB%8C%80%EC%9D%91_sywzii.png" 
             alt="Filming Case Analysis" 
             className="rounded-[40px] shadow-2xl w-full grayscale-[0.2] hover:grayscale-0 transition-all duration-700"
             referrerPolicy="no-referrer"
@@ -2324,7 +2332,7 @@ const MolestationCaseContent = () => (
         </div>
         <div className="relative">
           <img 
-            src="https://9tsiiw6i9140.edge.naverncp.com/files/sgrsoft/202603/fff22c558386aeb6f29c77afcb70056b.png" 
+            src="https://res.cloudinary.com/dxjz9ksjg/image/upload/v1786088924/%EA%B0%95%EC%A0%9C_%EC%B6%94%ED%96%89_%EC%A0%84%EB%AC%B8_%EB%8C%80%EC%9D%91_%ED%94%BC%EC%9D%98%EC%9E%90_%EC%9E%85%EC%9E%A5_%ED%8E%98%EC%9D%B4%EC%A7%80_x62jpy.png" 
             alt="Molestation Case Analysis" 
             className="rounded-[40px] shadow-2xl w-full"
             referrerPolicy="no-referrer"
@@ -2433,12 +2441,41 @@ const RapeCaseContent = () => (
   <div className="space-y-24">
     {/* 2. 사건 개요 설명 */}
     <section>
-      <h2 className="text-3xl font-bold text-slate-900 mb-8 flex items-center gap-3">
-        <div className="w-10 h-10 rounded-xl bg-emerald-100 text-primary-deep flex items-center justify-center">
-          <FileText className="w-6 h-6" />
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-20">
+        <div>
+          <h2 className="text-3xl font-bold text-slate-900 mb-8 flex items-center gap-3">
+            <div className="w-10 h-10 rounded-xl bg-emerald-100 text-primary-deep flex items-center justify-center shrink-0">
+              <FileText className="w-6 h-6" />
+            </div>
+            강간 / 준강간 사건의 특징
+          </h2>
+          <p className="text-xl font-bold text-slate-900 mb-6 leading-relaxed break-keep">
+            강간 · 준강간 사건은 동의 여부와 순간의 판단에 대한 심리 구조 분석이 핵심입니다.
+          </p>
+          <p className="text-lg text-slate-500 leading-relaxed mb-8 break-keep">
+            사건의 실체적 진실을 가리는 가장 중요한 쟁점은 '동의'의 유무와 그 인식 과정이며, 음주 상황, 관계의 깊이 등 복합적 요소가 작용합니다.
+          </p>
+          <div className="p-6 rounded-2xl bg-rose-50 border border-rose-100">
+            <p className="text-rose-700 font-bold leading-relaxed break-keep">
+              사건 발생 당시의 왜곡된 인식을 바로잡지 않으면 진정한 반성과 변화로 이어지기 어렵습니다.
+            </p>
+          </div>
         </div>
-        강간 / 준강간 사건의 특징
-      </h2>
+        <div className="relative">
+          <img
+            src="https://res.cloudinary.com/dxjz9ksjg/image/upload/v1786088921/%EA%B0%95%EA%B0%84_%EC%A4%80%EA%B0%95%EA%B0%84_%EC%A0%84%EB%AC%B8_%EB%8C%80%EC%9D%91_vtw8fb.png"
+            alt="강간 / 준강간 사건의 특징"
+            className="rounded-[40px] shadow-2xl w-full object-cover"
+            referrerPolicy="no-referrer"
+          />
+          <div className="relative lg:absolute lg:-bottom-10 lg:-left-10 mt-6 lg:mt-0 p-8 bg-white rounded-3xl shadow-2xl border border-slate-100 max-w-xs">
+            <p className="text-slate-900 font-bold italic leading-relaxed break-keep">
+              "동의 인식의 객관적 재점검과 심리 구조 해체가 재발방지의 핵심입니다."
+            </p>
+          </div>
+        </div>
+      </div>
+
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {[
           { title: "동의 여부의 핵심성", desc: "사건의 실체적 진실을 가리는 가장 중요한 쟁점은 '동의'의 유무와 그 인식 과정입니다." },
@@ -2608,8 +2645,107 @@ const CasePage = ({ title, slug }: { title: string; slug: string }) => (
     className="bg-white min-h-screen"
   >
     {/* Page Header */}
-    <div className="bg-slate-50 py-16 lg:py-32 border-b border-slate-200">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="relative bg-slate-50 py-16 lg:py-32 border-b border-slate-200 overflow-hidden">
+      {slug === 'rape' && (
+        <div className="absolute inset-0 pointer-events-none">
+          <img
+            src="https://res.cloudinary.com/dxjz9ksjg/image/upload/v1786088921/%EA%B0%95%EA%B0%84_%EC%A4%80%EA%B0%95%EA%B0%84_%EC%A0%84%EB%AC%B8_%EB%8C%80%EC%9D%91_vtw8fb.png"
+            alt="구미 강간 / 준강간 전문 대응"
+            className="w-full h-full object-cover opacity-20"
+            referrerPolicy="no-referrer"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-50/85 via-slate-50/55 to-transparent" />
+        </div>
+      )}
+      {slug === 'molestation' && (
+        <div className="absolute inset-0 pointer-events-none">
+          <img
+            src="https://res.cloudinary.com/dxjz9ksjg/image/upload/v1786088924/%EA%B0%95%EC%A0%9C_%EC%B6%94%ED%96%89_%EC%A0%84%EB%AC%B8_%EB%8C%80%EC%9D%91_%ED%94%BC%EC%9D%98%EC%9E%90_%EC%9E%85%EC%9E%A5_%ED%8E%98%EC%9D%B4%EC%A7%80_x62jpy.png"
+            alt="구미 강제추행 전문 대응"
+            className="w-full h-full object-cover opacity-20"
+            referrerPolicy="no-referrer"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-50/85 via-slate-50/55 to-transparent" />
+        </div>
+      )}
+      {slug === 'filming' && (
+        <div className="absolute inset-0 pointer-events-none">
+          <img
+            src="https://res.cloudinary.com/dxjz9ksjg/image/upload/v1786088926/%EB%B6%88%EB%B2%95_%EC%B9%B4%EB%A9%94%EB%9D%BC%EC%B4%AC%EC%98%81_%EC%9C%A0%ED%8F%AC_%EC%A0%84%EB%AC%B8_%EB%8C%80%EC%9D%91_sywzii.png"
+            alt="구미 불법 카메라촬영 / 유포 전문 대응"
+            className="w-full h-full object-cover opacity-20"
+            referrerPolicy="no-referrer"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-50/85 via-slate-50/55 to-transparent" />
+        </div>
+      )}
+      {slug === 'deepfake' && (
+        <div className="absolute inset-0 pointer-events-none">
+          <img
+            src="https://res.cloudinary.com/dxjz9ksjg/image/upload/v1785746426/67d97b84c9f7063f52c317540fa1688a_mvk69s.png"
+            alt="구미 딥페이크 / 합성물 전문 대응"
+            className="w-full h-full object-cover opacity-20"
+            referrerPolicy="no-referrer"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-50/85 via-slate-50/55 to-transparent" />
+        </div>
+      )}
+      {slug === 'tongmaeum' && (
+        <div className="absolute inset-0 pointer-events-none">
+          <img
+            src="https://res.cloudinary.com/dxjz9ksjg/image/upload/v1774346348/ChatGPT_Image_2026%EB%85%84_3%EC%9B%94_3%EC%9D%BC_%EC%98%A4%ED%9B%84_06_56_55_cxvu5c.png"
+            alt="구미 통매음 전문 대응"
+            className="w-full h-full object-cover opacity-20"
+            referrerPolicy="no-referrer"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-50/85 via-slate-50/55 to-transparent" />
+        </div>
+      )}
+      {slug === 'juvenile' && (
+        <div className="absolute inset-0 pointer-events-none">
+          <img
+            src="https://res.cloudinary.com/dxjz9ksjg/image/upload/v1774346347/ChatGPT_Image_2026%EB%85%84_3%EC%9B%94_3%EC%9D%BC_%EC%98%A4%ED%9B%84_07_14_08_pgier6.png"
+            alt="구미 아청법 관련 사건 전문 대응"
+            className="w-full h-full object-cover opacity-20"
+            referrerPolicy="no-referrer"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-50/85 via-slate-50/55 to-transparent" />
+        </div>
+      )}
+      {slug === 'statutory-rape' && (
+        <div className="absolute inset-0 pointer-events-none">
+          <img
+            src="https://res.cloudinary.com/dxjz9ksjg/image/upload/v1786091036/%EB%AF%B8%EC%84%B1%EB%85%84%EC%9E%90_%EC%9D%98%EC%A0%9C_%EA%B0%95%EA%B0%84_%EC%A0%84%EB%AC%B8_%EB%8C%80%EC%9D%91_hlwadm.png"
+            alt="구미 미성년자 의제 강간 전문 대응"
+            className="w-full h-full object-cover opacity-20"
+            referrerPolicy="no-referrer"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-50/85 via-slate-50/55 to-transparent" />
+        </div>
+      )}
+      {slug === 'stalking' && (
+        <div className="absolute inset-0 pointer-events-none">
+          <img
+            src="https://res.cloudinary.com/dxjz9ksjg/image/upload/v1774346345/ChatGPT_Image_2026%EB%85%84_3%EC%9B%94_3%EC%9D%BC_%EC%98%A4%ED%9B%84_07_32_36_pvyiur.png"
+            alt="구미 스토킹 / 주거침입 전문 대응"
+            className="w-full h-full object-cover opacity-20"
+            referrerPolicy="no-referrer"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-50/85 via-slate-50/55 to-transparent" />
+        </div>
+      )}
+      {slug === 'workplace' && (
+        <div className="absolute inset-0 pointer-events-none">
+          <img
+            src="https://res.cloudinary.com/dxjz9ksjg/image/upload/v1774346329/ChatGPT_Image_2026%EB%85%84_3%EC%9B%94_3%EC%9D%BC_%EC%98%A4%ED%9B%84_08_16_41_yut2kc.png"
+            alt="구미 직장/학교 사건 전문 대응"
+            className="w-full h-full object-cover opacity-20"
+            referrerPolicy="no-referrer"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-50/85 via-slate-50/55 to-transparent" />
+        </div>
+      )}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <Link to="/" className="inline-flex items-center gap-2 text-primary-deep font-bold mb-8 hover:text-emerald-700 transition-colors">
           <ArrowLeft className="w-4 h-4" />
           사건유형 전체보기
@@ -2771,8 +2907,52 @@ const TreatmentPage = ({ title, slug }: { title: string; slug: string }) => (
     className="bg-white min-h-screen"
   >
     {/* Page Header */}
-    <div className="bg-bg-soft py-16 lg:py-32 border-b border-emerald-100">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="relative bg-bg-soft py-16 lg:py-32 border-b border-emerald-100 overflow-hidden">
+      {slug === 'offender' && (
+        <div className="absolute inset-0 pointer-events-none">
+          <img
+            src="https://res.cloudinary.com/dxjz9ksjg/image/upload/v1785746424/8dd7bf0c969b781cadaeeb3f81a21923_u0fgqg.png"
+            alt="구미 성범죄 가해자 심리상담"
+            className="w-full h-full object-cover opacity-20"
+            referrerPolicy="no-referrer"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#F0FDF4]/85 via-[#F0FDF4]/55 to-transparent" />
+        </div>
+      )}
+      {slug === 'digital' && (
+        <div className="absolute inset-0 pointer-events-none">
+          <img
+            src="https://res.cloudinary.com/dxjz9ksjg/image/upload/v1786088919/%EB%B6%88%EB%B2%95_%EC%B9%B4%EB%A9%94%EB%9D%BC%EC%B4%AC%EC%98%81_%EC%9C%A0%ED%8F%AC_xntnnr.png"
+            alt="구미 디지털 성범죄"
+            className="w-full h-full object-cover opacity-20"
+            referrerPolicy="no-referrer"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#F0FDF4]/85 via-[#F0FDF4]/55 to-transparent" />
+        </div>
+      )}
+      {slug === 'paraphilia' && (
+        <div className="absolute inset-0 pointer-events-none">
+          <img
+            src="https://res.cloudinary.com/dxjz9ksjg/image/upload/v1786088926/%EC%84%B1%EB%8F%84%EC%B0%A9_%ED%96%89%EB%8F%99%EA%B5%90%EC%A0%95_%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8_luaytt.png"
+            alt="구미 성도착/행동교정"
+            className="w-full h-full object-cover opacity-20"
+            referrerPolicy="no-referrer"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#F0FDF4]/85 via-[#F0FDF4]/55 to-transparent" />
+        </div>
+      )}
+      {slug === 'addiction' && (
+        <div className="absolute inset-0 pointer-events-none">
+          <img
+            src="https://res.cloudinary.com/dxjz9ksjg/image/upload/v1786088924/%EC%84%B1%EC%A4%91%EB%8F%85%ED%96%89%EB%8F%99%EC%A4%91%EB%8F%85_%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8_j8ugtz.png"
+            alt="구미 성중독/행동중독"
+            className="w-full h-full object-cover opacity-20"
+            referrerPolicy="no-referrer"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#F0FDF4]/85 via-[#F0FDF4]/55 to-transparent" />
+        </div>
+      )}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <Link to="/" className="inline-flex items-center gap-2 text-primary-deep font-bold mb-8 hover:text-emerald-700 transition-colors">
           <ArrowLeft className="w-4 h-4" />
           상담/치료 전체보기
@@ -2918,7 +3098,7 @@ const TreatmentPage = ({ title, slug }: { title: string; slug: string }) => (
               </div>
               <div className="relative">
                 <img 
-                  src="https://9tsiiw6i9140.edge.naverncp.com/files/sgrsoft/202603/44741954c21f7b7bc7e4cb7feee9ef2e.png" 
+                  src="https://res.cloudinary.com/dxjz9ksjg/image/upload/v1785746424/8dd7bf0c969b781cadaeeb3f81a21923_u0fgqg.png" 
                   alt="Counseling Session" 
                   className="rounded-[40px] shadow-2xl w-full"
                   referrerPolicy="no-referrer"
@@ -3053,7 +3233,7 @@ const TreatmentPage = ({ title, slug }: { title: string; slug: string }) => (
               </div>
               <div className="relative">
                 <img 
-                  src="https://9tsiiw6i9140.edge.naverncp.com/files/sgrsoft/202603/7782b34c496fd1e121ea57e02d77e129.png" 
+                  src="https://res.cloudinary.com/dxjz9ksjg/image/upload/v1786088926/%EC%84%B1%EB%8F%84%EC%B0%A9_%ED%96%89%EB%8F%99%EA%B5%90%EC%A0%95_%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8_luaytt.png" 
                   alt="Behavioral Correction" 
                   className="rounded-[40px] shadow-2xl w-full"
                   referrerPolicy="no-referrer"
@@ -3168,7 +3348,7 @@ const TreatmentPage = ({ title, slug }: { title: string; slug: string }) => (
                 
                 <div className="relative">
                   <img 
-                    src="https://9tsiiw6i9140.edge.naverncp.com/files/sgrsoft/202603/67d97b84c9f7063f52c317540fa1688a.png" 
+                    src="https://res.cloudinary.com/dxjz9ksjg/image/upload/v1786088919/%EB%B6%88%EB%B2%95_%EC%B9%B4%EB%A9%94%EB%9D%BC%EC%B4%AC%EC%98%81_%EC%9C%A0%ED%8F%AC_xntnnr.png" 
                     alt="Digital Crime Therapy" 
                     className="rounded-[40px] shadow-2xl w-full"
                     referrerPolicy="no-referrer"
@@ -3475,8 +3655,17 @@ const EducationPage = ({ title, slug }: { title: string; slug: string }) => {
         className="bg-white min-h-screen"
       >
         {/* SEO Optimized Main Title Section */}
-        <div className="bg-slate-50 py-24 lg:py-32 border-b border-slate-200">
-          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="relative bg-slate-50 py-24 lg:py-32 border-b border-slate-200 overflow-hidden">
+          <div className="absolute inset-0 pointer-events-none">
+            <img
+              src="https://res.cloudinary.com/dxjz9ksjg/image/upload/v1786107152/%EC%84%B1%EB%B2%94%EC%A3%84_%EC%9E%AC%EB%B2%94%EB%B0%A9%EC%A7%80_%EA%B5%90%EC%9C%A1_skedbn.png"
+              alt="구미 성범죄 재범방지 교육"
+              className="w-full h-full object-cover opacity-20"
+              referrerPolicy="no-referrer"
+            />
+            <div className="absolute inset-0 bg-gradient-to-b from-slate-50/85 via-slate-50/60 to-slate-50/85" />
+          </div>
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -3703,7 +3892,7 @@ const EducationPage = ({ title, slug }: { title: string; slug: string }) => {
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="rounded-[40px] overflow-hidden shadow-2xl border-8 border-white">
               <img 
-                src="https://9tsiiw6i9140.edge.naverncp.com/files/sgrsoft/202603/008052d96852e02032a222525ec5cf6b.jpg" 
+                src="https://res.cloudinary.com/dxjz9ksjg/image/upload/v1786088919/%EC%84%B1%EB%B2%94%EC%A3%84_%EC%A4%80%EB%B2%95%EC%A0%95%EC%8B%A0_%EA%B0%95%ED%99%94_%EA%B5%90%EC%9C%A1_%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8_wqgy1p.png" 
                 alt="Compliance Spirit Enhancement Education Session" 
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"
@@ -3902,7 +4091,7 @@ const EducationPage = ({ title, slug }: { title: string; slug: string }) => {
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="rounded-[40px] overflow-hidden shadow-2xl border-8 border-white">
               <img 
-                src="https://9tsiiw6i9140.edge.naverncp.com/files/sgrsoft/202603/bf8abbc8620ad292a5897e0f727ec865.png" 
+                src="https://res.cloudinary.com/dxjz9ksjg/image/upload/v1786089531/%EC%9E%AC%EB%B2%94%EB%B0%A9%EC%A7%80_%EA%B5%90%EC%9C%A1_%EC%A4%91_%ED%95%98%EB%82%98_nxt8cp.png" 
                 alt="Gender Discrimination Education Session" 
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"
@@ -4080,7 +4269,7 @@ const EducationPage = ({ title, slug }: { title: string; slug: string }) => {
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="rounded-[40px] overflow-hidden shadow-2xl border-8 border-white">
               <img 
-                src="https://9tsiiw6i9140.edge.naverncp.com/files/sgrsoft/202603/acf6e99259b2104fe43d244ba205a943.png" 
+                src="https://res.cloudinary.com/dxjz9ksjg/image/upload/v1785747295/%EC%84%B1%EC%9D%B8%EC%A7%80%EC%99%9C%EA%B3%A1_%EA%B5%90%EC%A0%95%EA%B5%90%EC%9C%A1_a2neuh.png" 
                 alt="Gender Perception Distortion Correction Session" 
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"
@@ -4228,7 +4417,7 @@ const EducationPage = ({ title, slug }: { title: string; slug: string }) => {
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="rounded-[40px] overflow-hidden shadow-2xl border-8 border-white">
               <img 
-                src="https://9tsiiw6i9140.edge.naverncp.com/files/sgrsoft/202603/4e951cd731012c6a33d6968c0ce4b114.png" 
+                src="https://res.cloudinary.com/dxjz9ksjg/image/upload/v1785746679/%EC%84%B1%EC%9D%B8%EC%A7%80%EA%B0%90%EC%88%98%EC%84%B1_ult8hq.png" 
                 alt="Gender Sensitivity Education Session" 
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"
@@ -4603,13 +4792,14 @@ const CollaborationPage = () => (
   >
     {/* 1. Hero Section */}
     <header className="relative bg-slate-50 py-24 lg:py-32 text-slate-900 overflow-hidden border-b border-slate-200">
-      <div className="absolute inset-0 opacity-10">
+      <div className="absolute inset-0 pointer-events-none">
         <img 
-          src="https://9tsiiw6i9140.edge.naverncp.com/files/sgrsoft/202603/9eb6a8cef42bd42fcf096c96f81fd52a.png" 
+          src="https://res.cloudinary.com/dxjz9ksjg/image/upload/v1785746399/f2ff459c6d7d4b51450ed22f0fd0ff29_mxcc8u.png" 
           alt="Lawyer Collaboration Hero" 
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover opacity-20"
           referrerPolicy="no-referrer"
         />
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-50/85 via-slate-50/55 to-transparent" />
       </div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-3xl">
@@ -4647,7 +4837,7 @@ const CollaborationPage = () => (
           </div>
           <div className="rounded-3xl overflow-hidden shadow-2xl">
             <img 
-              src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80&w=800" 
+              src="https://res.cloudinary.com/dxjz9ksjg/image/upload/v1785746399/f2ff459c6d7d4b51450ed22f0fd0ff29_mxcc8u.png" 
               alt="Professional Counseling Session" 
               className="w-full h-full object-cover"
               referrerPolicy="no-referrer"
@@ -5113,7 +5303,7 @@ const LegalAssessmentPage = () => {
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="rounded-[40px] overflow-hidden shadow-2xl border-8 border-white">
             <img 
-              src="https://9tsiiw6i9140.edge.naverncp.com/files/sgrsoft/202603/8da9b2d5602c75b267fd7573a10c5117.png" 
+              src="https://res.cloudinary.com/dxjz9ksjg/image/upload/v1785746402/8da9b2d5602c75b267fd7573a10c5117_tey9j5.png" 
               alt="Professional Psychological Counseling Session" 
               className="w-full h-full object-cover"
               referrerPolicy="no-referrer"
@@ -7020,7 +7210,7 @@ const CounselingProcessPage = () => (
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="rounded-[40px] overflow-hidden shadow-2xl border-8 border-white">
           <img 
-            src="https://9tsiiw6i9140.edge.naverncp.com/files/sgrsoft/202603/238f8462b0008cc95bc664c1596010d9.png" 
+            src="https://res.cloudinary.com/dxjz9ksjg/image/upload/v1786088923/%EC%84%B1%EB%B2%94%EC%A3%84_%EA%B0%80%ED%95%B4%EC%9E%90_%EC%83%81%EB%8B%B4_%EB%B0%8F_%EC%B9%98%EB%A3%8C_%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4_tveqfl.png" 
             alt="Professional Counseling Session" 
             className="w-full h-full object-cover"
             referrerPolicy="no-referrer"
@@ -7292,7 +7482,7 @@ const ConfidentialityPage = () => (
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="rounded-[40px] overflow-hidden shadow-2xl border-8 border-white">
           <img 
-            src="https://9tsiiw6i9140.edge.naverncp.com/files/sgrsoft/202603/7bf59580a586cf32c4f0c25399919ee9.png" 
+            src="https://res.cloudinary.com/dxjz9ksjg/image/upload/v1785746427/238f8462b0008cc95bc664c1596010d9_tosbht.png" 
             alt="Secure Counseling Environment" 
             className="w-full h-full object-cover"
             referrerPolicy="no-referrer"
@@ -8654,7 +8844,7 @@ const COLUMN_POSTS = [
     id: "sentencing-material",
     title: "성범죄 가해자의 양형자료로서의 심리치료, 그 진정성의 가치", 
     category: "법률/심리",
-    image: "https://9tsiiw6i9140.edge.naverncp.com/files/sgrsoft/202603/5c20fe13d89f0e3eed075d6b0ba90a74.png",
+    image: "https://res.cloudinary.com/dxjz9ksjg/image/upload/v1785746419/5c20fe13d89f0e3eed075d6b0ba90a74_stb2a7.png",
     content: [
       { type: 'text', value: '사건이 발생한 이후 많은 분들이 깊은 혼란과 두려움 속에서 시간을 보내게 됩니다. 수사와 재판 과정은 낯설고, 앞으로 삶이 어떻게 될지에 대한 불안도 커집니다. 이 과정에서 많은 분들이 "양형자료"라는 말을 듣게 됩니다.\n\n양형자료는 재판 과정에서 판사가 피고인의 삶, 태도, 변화 가능성을 이해하는 데 참고하는 자료입니다. 단순히 서류 몇 장으로 만들어지는 것이 아니라, 그 사람이 사건을 어떻게 바라보고 있는지, 어떤 반성과 변화의 과정을 겪고 있는지를 보여주는 중요한 자료입니다.\n\n그중에서도 심리치료와 상담 기록은 매우 중요한 의미를 가집니다.' },
       { type: 'text', value: '하지만 상담을 단순히 "재판에 도움이 되는 서류" 정도로 생각한다면, 그 가치는 절반도 발휘되지 않습니다. 심리치료의 진짜 의미는 처벌을 줄이기 위한 기술이 아니라, 자신을 이해하고 같은 일이 반복되지 않도록 삶의 방향을 바꾸는 과정에 있습니다.' },
@@ -8675,7 +8865,7 @@ const COLUMN_POSTS = [
     title: "성범죄 사건에서 판사가 실제로 보는 것 7가지", 
     subtitle: "재판은 단순히 사건의 사실만 보는 과정이 아닙니다.\n판사는 사건의 내용뿐 아니라 그 사람의 태도, 변화 가능성, 사건 이후의 행동까지 함께 살펴보게 됩니다.",
     category: "법률/심리",
-    image: "https://9tsiiw6i9140.edge.naverncp.com/files/sgrsoft/202603/78477f2b9e3e7de356790d754d394f12.png",
+    image: "https://res.cloudinary.com/dxjz9ksjg/image/upload/v1785746433/78477f2b9e3e7de356790d754d394f12_glh9dc.png",
     content: [
       { type: 'text', value: '성범죄 사건을 겪게 되면 많은 사람들이 가장 궁금해하는 질문이 있습니다.\n\n“판사는 무엇을 가장 중요하게 볼까요?”\n\n재판은 단순히 사건의 사실만 보는 과정이 아닙니다.\n판사는 사건의 내용뿐 아니라 그 사람의 태도, 변화 가능성, 사건 이후의 행동까지 함께 살펴보게 됩니다.\n\n실제 많은 사건을 보면 판사가 중요하게 보는 요소에는 몇 가지 공통적인 부분이 있습니다.' },
       { type: 'header', value: '1. 사건의 구체적인 내용' },
@@ -8703,7 +8893,7 @@ const COLUMN_POSTS = [
     title: "수사 단계에서 심리상담이 중요한 이유", 
     subtitle: "성범죄 사건이 발생하면 대부분의 사람들은 먼저 법적인 문제에 집중하게 됩니다. 하지만 수사 단계에서 상담을 시작하는 것이 훨씬 의미 있는 경우가 많습니다.",
     category: "수사 대응",
-    image: "https://9tsiiw6i9140.edge.naverncp.com/files/sgrsoft/202603/be87f24080fec71969109cbf32b4e081.png",
+    image: "https://res.cloudinary.com/dxjz9ksjg/image/upload/v1786093185/%EC%88%98%EC%82%AC_%EB%8B%A8%EA%B3%84%EC%97%90%EC%84%9C_%EC%8B%AC%EB%A6%AC%EC%83%81%EB%8B%B4%EC%9D%B4_%EC%A4%91%EC%9A%94%ED%95%9C_%EC%9D%B4%EC%9C%A0_mfglw2.png",
     content: [
       { type: 'text', value: '성범죄 사건이 발생하면 대부분의 사람들은 먼저 법적인 문제에 집중하게 됩니다. 변호사를 선임하고, 조사에 대비하고, 앞으로 재판이 어떻게 진행될지 걱정하게 됩니다. 그래서 많은 분들이 이렇게 생각합니다.\n\n"상담은 재판 전에 양형자료 준비할 때 받으면 되는 것 아닌가요?"\n\n하지만 실제 상담 현장에서 보면 수사 단계에서 상담을 시작하는 것이 훨씬 의미 있는 경우가 많습니다.\n\n왜냐하면 수사 단계는 단순히 사건이 진행되는 시간이 아니라, 자신의 삶과 행동을 정리해야 하는 가장 중요한 시기이기 때문입니다.' },
       { type: 'header', value: '1. 수사 단계는 가장 혼란스러운 시기입니다' },
@@ -8723,7 +8913,7 @@ const COLUMN_POSTS = [
     title: "성범죄는 왜 반복되는가", 
     subtitle: "행동 뒤에 숨겨진 심리적 메커니즘\n“멈추고 싶지만 반복되는 이유”",
     category: "심리 분석",
-    image: "https://9tsiiw6i9140.edge.naverncp.com/files/sgrsoft/202603/796d18ec61eaf3bd47cfd442a68b326a.png",
+    image: "https://res.cloudinary.com/dxjz9ksjg/image/upload/v1774346314/ChatGPT_Image_2026%EB%85%84_3%EC%9B%94_6%EC%9D%BC_%EC%98%A4%ED%9B%84_05_45_25_y2cxol.png",
     content: [
       { type: 'text', value: '성범죄 사건을 상담하다 보면 많은 사람들이 비슷한 이야기를 합니다.\n\n“저도 왜 그런 행동을 했는지 잘 모르겠습니다.”\n“그 순간에는 그렇게까지 큰 문제가 될 거라고 생각하지 못했습니다.”\n“지금 생각해 보면 왜 그랬는지 이해가 안 됩니다.”\n\n이 말은 단순한 변명이 아니라, 실제로 많은 사람들이 자신의 행동을 정확히 이해하지 못한 채 행동했다는 사실을 보여줍니다.\n\n성범죄는 단순히 한 번의 선택으로만 설명되기 어려운 경우가 많습니다.\n그 뒤에는 여러 심리적 요인이 복합적으로 작용하는 구조가 존재합니다.' },
       { type: 'header', value: '1. 순간적인 충동과 판단의 흐려짐' },
@@ -8745,7 +8935,7 @@ const COLUMN_POSTS = [
     title: "디지털 성범죄 가해자의 인지 왜곡과 교정 방향", 
     subtitle: "디지털 성범죄, “나는 그렇게까지 나쁜 사람은 아니다”라는 생각에서 시작됩니다",
     category: "디지털 성범죄",
-    image: "https://9tsiiw6i9140.edge.naverncp.com/files/sgrsoft/202603/a097200e74874a98b864261e7a3ab6c5.jpg",
+    image: "https://res.cloudinary.com/dxjz9ksjg/image/upload/v1786094749/%EB%94%94%EC%A7%80%ED%84%B8_%EC%84%B1%EB%B2%94%EC%A3%84_%EC%82%BD%ED%99%94_df0zyb.png",
     content: [
       { type: 'text', value: '디지털 성범죄로 조사를 받거나, 이미 처벌을 경험하신 분들 중 상당수는 이렇게 말합니다.\n“그냥 호기심이었다.”\n“다들 보는 줄 알았다.”\n“실제 만난 것도 아닌데 그렇게 큰 문제인가요?”\n“저는 피해를 줄 생각은 없었습니다.”\n이 말들은 변명이 아니라, 그 당시 당신의 진짜 생각이었을 가능성이 큽니다.\n그리고 바로 그 지점이, 우리가 함께 들여다봐야 할 ‘인지 왜곡’의 출발점입니다.' },
       { type: 'header', value: '1. 디지털 성범죄 가해자의 ‘인지 왜곡’이란 무엇인가' },
@@ -8768,7 +8958,7 @@ const COLUMN_POSTS = [
     id: "family-support",
     title: "가족의 지지가 재범 방지에 미치는 영향", 
     category: "가족 상담",
-    image: "https://9tsiiw6i9140.edge.naverncp.com/files/sgrsoft/202603/e1c1a882b51b29c3b836a615b1f12eea.png",
+    image: "https://res.cloudinary.com/dxjz9ksjg/image/upload/v1785746413/e1c1a882b51b29c3b836a615b1f12eea_b4r2dn.png",
     content: [
       { type: 'text', value: '성범죄 사건 이후 많은 분들이 깊은 혼란과 두려움 속에 시간을 보내게 됩니다. 사건 자체도 충격이지만, 그 이후의 삶이 어떻게 될지에 대한 불안이 더 크게 다가오기도 합니다. 이 과정에서 가장 중요한 요소 중 하나가 바로 가족의 지지입니다.' },
       { type: 'header', value: '사건 이후의 심리 상태' },
@@ -8787,7 +8977,7 @@ const COLUMN_POSTS = [
     id: "impulse-correlation",
     title: "충동 조절 장애와 성범죄의 상관관계", 
     category: "정신건강",
-    image: "https://9tsiiw6i9140.edge.naverncp.com/files/sgrsoft/202603/c8e33c77f1c750bb6cd1ce25a6b907f1.png",
+    image: "https://res.cloudinary.com/dxjz9ksjg/image/upload/v1785746410/c8e33c77f1c750bb6cd1ce25a6b907f1_almtmf.png",
     content: [
       { type: 'text', value: '많은 성범죄 사건을 상담 현장에서 만나면서 공통적으로 발견되는 특징 중 하나는 ‘충동을 조절하는 어려움’입니다. 물론 모든 사건이 동일한 원인에서 발생하는 것은 아닙니다. 하지만 순간적인 욕구나 자극을 통제하지 못하는 문제는 여러 사건에서 중요한 심리적 배경으로 나타납니다.' },
       { type: 'text', value: '충동은 인간이라면 누구나 경험합니다. 어떤 이미지를 보거나, 특정한 상황에 놓이거나, 감정이 강하게 올라올 때 순간적인 욕구가 생길 수 있습니다. 문제는 충동 자체가 아니라 그 충동을 어떻게 다루느냐입니다.' },
@@ -8811,7 +9001,7 @@ const COLUMN_POSTS = [
     id: "post-trauma-anxiety",
     title: "성범죄 사건 이후 불안과 공포가 계속되는 이유", 
     category: "심리 상담",
-    image: "https://9tsiiw6i9140.edge.naverncp.com/files/sgrsoft/202603/9b2da1459e997e0abd235c1aa8eb29c2.png",
+    image: "https://res.cloudinary.com/dxjz9ksjg/image/upload/v1785746426/9b2da1459e997e0abd235c1aa8eb29c2_w8zj4i.png",
     content: [
       { type: 'text', value: '성범죄 사건에 연루된 이후 많은 사람들이 비슷한 이야기를 합니다.\n\n"잠을 제대로 못 잡니다."\n"계속 사건 생각이 납니다."\n"앞으로 어떻게 될지 모르겠어서 너무 불안합니다."\n\n사건 이후 느끼는 불안과 공포는 단순한 걱정 수준을 넘어서는 경우가 많습니다. 수사, 재판, 사회적 시선, 가족 문제 등 여러 요소가 동시에 작용하면서 심리적으로 매우 큰 압박을 경험하게 됩니다.\n\n상담 현장에서 보면 많은 분들이 사건 이후 특정한 심리 패턴을 경험합니다.' },
       { type: 'header', value: '1. 계속 반복되는 생각' },
@@ -9459,7 +9649,9 @@ const MediaArchive = () => {
 
 const ArchivePage = ({ title, slug }: { title: string; slug: string }) => {
   const [activeTest, setActiveTest] = useState<string | null>(null);
-  const [activePost, setActivePost] = useState<typeof COLUMN_POSTS[0] | null>(null);
+  const [searchParams, setSearchParams] = useSearchParams();
+  const postParam = slug === 'column' ? searchParams.get('post') : null;
+  const activePost = postParam ? COLUMN_POSTS.find(p => p.id === postParam) ?? null : null;
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -9482,7 +9674,7 @@ const ArchivePage = ({ title, slug }: { title: string; slug: string }) => {
               <button 
                 onClick={() => {
                   setActiveTest(null);
-                  setActivePost(null);
+                  if (activePost) setSearchParams({});
                 }}
                 className={`p-2 rounded-full border transition-colors ${slug === 'media' ? 'bg-white border-slate-200 text-slate-600 hover:text-emerald-600' : 'bg-white border-slate-200 text-slate-600 hover:text-emerald-600'}`}
               >
@@ -9575,7 +9767,7 @@ const ArchivePage = ({ title, slug }: { title: string; slug: string }) => {
             <div 
               key={idx} 
               className="group cursor-pointer"
-              onClick={() => post.content && setActivePost(post)}
+              onClick={() => post.content && setSearchParams({ post: post.id })}
             >
               <div className="aspect-video rounded-3xl bg-slate-100 mb-6 overflow-hidden relative">
                 <img 
