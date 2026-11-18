@@ -34,7 +34,7 @@ export const PARTNERS_DATA: PartnerCategory[] = [
     ]
   },
   {
-    category: "법률기관",
+    category: "법률기관 -협약 및 양형자료 제공",
     items: [
       { name: "법무법인 로하스", image: "https://res.cloudinary.com/dxjz9ksjg/image/upload/v1775047909/KakaoTalk_20210501_115331134_1_ppiuf2.jpg", link: "https://lohas-law.com/" },
       { name: "법무법인 소울", image: "https://res.cloudinary.com/dxjz9ksjg/image/upload/v1775047795/%EC%86%8C%EC%9A%B8_%EB%A1%9C%EA%B3%A0_s6wvju.png", link: "https://www.soullaw.co.kr/" },
